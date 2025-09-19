@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The FinTech Alchemist - Phase 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #4c51bf;
+            border-radius: 2px;
+        }
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #4c51bf;
+        }
+        .btn-secondary {
+            background-color: #e2e8f0;
+            color: #4a5568;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar py-4">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-700">The FinTech Alchemist</a>
+            <nav>
+                <a href="index.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Home</a>
+                <a href="projects.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Projects</a>
+                <a href="phases.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Phases</a>
+                <a href="about.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">About Me</a>
+                <a href="learning.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Learning Journey</a>
+                <a href="consultation.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Consultation</a>
+                <a href="contact.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="phase-content" class="py-16">
+        <div class="container">
+            <h2 class="section-title">Phase 1: Foundations</h2>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-lg leading-relaxed">
+                <p class="mb-6">
+                    This phase focuses on building a solid foundation in both financial principles and the essential tools of data science. I will be mastering key libraries like Pandas and NumPy for data manipulation and using Matplotlib and Seaborn for effective data visualization.
+                </p>
+                <div class="flex justify-center mt-8">
+                    <a href="week1.html" class="btn-secondary inline-block">Explore Week 1 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+        <div class="container">
+            <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
