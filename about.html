@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The FinTech Alchemist - About Me</title>
+    <title>Data-Driven Wealth - About Me</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+            background-color: #0d111c;
+            color: #e0e6f0;
         }
         .container {
             max-width: 1200px;
@@ -20,74 +20,82 @@
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #1a202c;
+            color: #fff;
             margin-bottom: 2rem;
             text-align: center;
-            position: relative;
-            padding-bottom: 0.5rem;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: #4c51bf;
-            border-radius: 2px;
-        }
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .card {
+            background-color: #1a2a3e;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .nav-link {
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .nav-link:hover {
-            color: #4c51bf;
+            color: #007bff;
         }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <header class="navbar py-4">
-        <div class="container flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-indigo-700">The FinTech Alchemist</a>
-            <nav>
-                <a href="index.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Home</a>
-                <a href="projects.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Projects</a>
-                <a href="phases.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Phases</a>
-                <a href="about.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">About Me</a>
-                <a href="learning.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Learning Journey</a>
-                <a href="consultation.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Consultation</a>
-                <a href="contact.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Contact</a>
-            </nav>
-        </div>
+    <header class="py-6 border-b border-gray-800">
+        <nav class="container flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-white">Data-Driven Wealth</a>
+            <div class="space-x-8 hidden md:flex">
+                <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
+                <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
+                <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
+                <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
+                <a href="Consultation%20&%20Collaboration.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
+                <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
     </header>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
+        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
+        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
+        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
+        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
+        <a href="Consultation%20&%20Collaboration.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
+        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
+    </div>
 
     <section id="about" class="py-16">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="bg-white rounded-xl shadow-lg p-6 text-lg leading-relaxed">
+            <div class="card text-lg leading-relaxed text-gray-400">
                 <p class="mb-4">
-                    Hello! I'm [Your Name], a passionate data scientist and finance enthusiast dedicated to bridging the gap between cutting-edge technology and practical financial planning. My mission is to build intelligent, data-driven tools that empower individuals and businesses to make smarter, more informed financial decisions.
+                    Hello! I'm [Your Name], a dedicated finance enthusiast with a strong drive to understand and optimize financial landscapes. My journey into finance began with a fascination for market dynamics and a desire to help individuals and businesses achieve their financial goals.
                 </p>
                 <p class="mb-4">
-                    My background combines a strong foundation in statistical modeling and machine learning with a deep understanding of financial markets and personal finance principles. I believe that everyone, regardless of their financial expertise, should have access to powerful tools to help them achieve their goals.
+                    I possess a solid foundation in financial analysis, investment management, and meticulous budgeting. My approach combines analytical rigor with a practical understanding of economic principles to deliver insightful and actionable financial strategies.
                 </p>
-                <p class="mb-6">
-                    This website is a showcase of my work, a living portfolio of projects that demonstrate how data can be leveraged to create wealth, manage risk, and plan for a secure future. I am constantly learning and exploring new technologies to stay at the forefront of the FinTech space.
+                <p>
+                    I am constantly seeking new challenges and opportunities to apply my skills in real-world scenarios, striving to make a tangible impact on financial well-being.
                 </p>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+    <footer class="bg-gray-900 text-gray-500 py-6 text-center">
         <div class="container">
-            <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
+            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
         </div>
     </footer>
 
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
