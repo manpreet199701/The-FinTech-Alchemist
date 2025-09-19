@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The FinTech Alchemist - Projects</title>
+    <title>Data-Driven Wealth - Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+            background-color: #0d111c;
+            color: #e0e6f0;
         }
         .container {
             max-width: 1200px;
@@ -20,105 +21,208 @@
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #1a202c;
+            color: #fff;
             margin-bottom: 2rem;
             text-align: center;
-            position: relative;
-            padding-bottom: 0.5rem;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: #4c51bf;
-            border-radius: 2px;
+        .project-card {
+            background-color: #1a2a3e;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-group .btn {
+            background-color: #1a2a3e;
+            color: #ccc;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-group .btn.active {
+            background-color: #007bff;
+            color: #fff;
         }
         .nav-link {
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .nav-link:hover {
-            color: #4c51bf;
+            color: #007bff;
         }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <header class="navbar py-4">
-        <div class="container flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-indigo-700">The FinTech Alchemist</a>
-            <nav>
-                <a href="index.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Home</a>
-                <a href="projects.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Projects</a>
-                <a href="phases.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Phases</a>
-                <a href="about.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">About Me</a>
-                <a href="learning.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Learning Journey</a>
-                <a href="consultation.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Consultation</a>
-                <a href="contact.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Contact</a>
-            </nav>
-        </div>
+    <header class="py-6 border-b border-gray-800">
+        <nav class="container flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-white">Data-Driven Wealth</a>
+            <div class="space-x-8 hidden md:flex">
+                <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
+                <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
+                <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
+                <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
+                <a href="Consultation%20&%20Collaboration.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
+                <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
     </header>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
+        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
+        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
+        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
+        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
+        <a href="Consultation%20&%20Collaboration.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
+        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
+    </div>
 
     <section id="projects" class="py-16">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div id="personal-finance" class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">Personal Finance Planner</h3>
-                    <p class="text-gray-600 mb-4">
-                        An intuitive tool built with Python and Streamlit to help you track your expenses, manage your budget, and visualize your savings goals with clear, data-driven insights. It leverages a simple, user-friendly interface to make financial planning accessible to everyone.
-                    </p>
-                    <a href="https://github.com/yourusername/personal-finance-planner" class="text-indigo-600 font-semibold hover:underline" target="_blank">View on GitHub →</a>
-                </div>
-
-                <div id="retirement-planning" class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">Retirement Planning Tool</h3>
-                    <p class="text-gray-600 mb-4">
-                        Leveraging data science to project your retirement savings and analyze various investment scenarios. The tool uses Monte Carlo simulations to model thousands of possible market outcomes, providing a more robust and realistic outlook on your financial future.
-                    </p>
-                    <a href="https://github.com/yourusername/retirement-planning-tool" class="text-indigo-600 font-semibold hover:underline" target="_blank">View on GitHub →</a>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">Algorithmic Trading Bot</h3>
-                    <p class="text-gray-600 mb-4">
-                        An automated trading system developed using the Alpaca API and Python. It analyzes real-time market data to execute trades based on a predefined set of quantitative indicators and strategies.
-                    </p>
-                    <a href="https://github.com/yourusername/algorithmic-trading-bot" class="text-indigo-600 font-semibold hover:underline" target="_blank">View on GitHub →</a>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">Cryptocurrency Sentiment Analysis</h3>
-                    <p class="text-gray-600 mb-4">
-                        This project uses natural language processing (NLP) to analyze social media and news articles to gauge public sentiment towards various cryptocurrencies, providing a non-traditional indicator for trading.
-                    </p>
-                    <a href="https://github.com/yourusername/crypto-sentiment-analysis" class="text-indigo-600 font-semibold hover:underline" target="_blank">View on GitHub →</a>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">ETF Portfolio Optimizer</h3>
-                    <p class="text-gray-600 mb-4">
-                        An advanced tool that leverages modern portfolio theory (MPT) to help investors create an optimal portfolio of ETFs based on their risk tolerance and desired returns.
-                    </p>
-                    <a href="https://github.com/yourusername/etf-optimizer" class="text-indigo-600 font-semibold hover:underline" target="_blank">View on GitHub →</a>
-                </div>
-
+            <div class="flex justify-center space-x-4 mb-12 btn-group">
+                <button id="btn-beginner" onclick="showProjects('beginner')" class="btn active">Beginner</button>
+                <button id="btn-intermediate" onclick="showProjects('intermediate')" class="btn">Intermediate</button>
+                <button id="btn-advanced" onclick="showProjects('advanced')" class="btn">Advanced</button>
             </div>
+
+            <div id="beginner-projects" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Financial Statement Analysis</h3>
+                    <p class="text-gray-400 mb-4">
+                        A project focused on analyzing the financial health of publicly traded companies using their balance sheets, income statements, and cash flow statements.
+                    </p>
+                    <a href="https://github.com/your-username/your-project-repo" class="text-sm text-blue-300 hover:underline">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Personal Budgeting Tool</h3>
+                    <p class="text-gray-400 mb-4">
+                        A simple Python-based tool to help individuals track their income and expenses, providing a clear overview of their spending habits.
+                    </p>
+                    <a href="https://github.com/your-username/your-project-repo" class="text-sm text-blue-300 hover:underline">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Market Data Visualization</h3>
+                    <p class="text-gray-400 mb-4">
+                        Using libraries like Matplotlib and Seaborn to visualize historical stock market data, identifying trends and patterns.
+                    </p>
+                    <a href="https://github.com/your-username/your-project-repo" class="text-sm text-blue-300 hover:underline">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div id="intermediate-projects" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Predictive Model for Stock Prices</h3>
+                    <p class="text-gray-400 mb-4">
+                        Developing a basic machine learning model using a regression algorithm to predict future stock prices based on historical data.
+                    </p>
+                    <a href="https://github.com/your-username/your-project-repo" class="text-sm text-blue-300 hover:underline">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Sentiment Analysis of Financial News</h3>
+                    <p class="text-gray-400 mb-4">
+                        Creating a program that scrapes financial news headlines and uses natural language processing (NLP) to determine market sentiment.
+                    </p>
+                    <a href="https://github.com/your-username/your-project-repo" class="text-sm text-blue-300 hover:underline">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Automated Trading Strategy Backtester</h3>
+                    <p class="text-gray-400 mb-4">
+                        Building a backtesting framework to test simple trading strategies on historical data before deployment.
+                    </p>
+                    <a href="https://github.com/your-username/your-project-repo" class="text-sm text-blue-300 hover:underline">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div id="advanced-projects" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Deep Learning for Time Series Forecasting</h3>
+                    <p class="text-gray-400 mb-4">
+                        Implementing advanced deep learning models (like LSTMs or Transformers) for more accurate time series forecasting of financial data.
+                    </p>
+                    <a href="https://github.com/your-username/your-project-repo" class="text-sm text-blue-300 hover:underline">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Algorithmic Trading Bot</h3>
+                    <p class="text-gray-400 mb-4">
+                        Developing and deploying a live algorithmic trading bot connected to a brokerage API, with risk management protocols.
+                    </p>
+                    <a href="https://github.com/your-username/your-project-repo" class="text-sm text-blue-300 hover:underline">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Quantitative Strategy Research</h3>
+                    <p class="text-gray-400 mb-4">
+                        Conducting research on complex quantitative strategies, such as arbitrage, market making, or volatility-based strategies.
+                    </p>
+                    <a href="https://github.com/your-username/your-project-repo" class="text-sm text-blue-300 hover:underline">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                </div>
+            </div>
+            
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+    <footer class="bg-gray-900 text-gray-500 py-6 text-center">
         <div class="container">
-            <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
+            <p>&copy; 2025 Data-Driven Wealth. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // JavaScript for dynamic filtering of project levels
+        function showProjects(level) {
+            const projectSections = ['beginner-projects', 'intermediate-projects', 'advanced-projects'];
+            const buttons = ['btn-beginner', 'btn-intermediate', 'btn-advanced'];
+
+            // Hide all project sections and deactivate all buttons
+            projectSections.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            buttons.forEach(id => {
+                document.getElementById(id).classList.remove('active');
+            });
+
+            // Show the selected project section and activate its button
+            document.getElementById(level + '-projects').classList.remove('hidden');
+            document.getElementById('btn-' + level).classList.add('active');
+        }
+
+        // Initialize with beginner projects shown
+        document.addEventListener('DOMContentLoaded', () => {
+            showProjects('beginner');
+        });
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
