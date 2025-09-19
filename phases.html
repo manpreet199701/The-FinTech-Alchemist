@@ -24,32 +24,15 @@
             margin-bottom: 2rem;
             text-align: center;
         }
-        .block-card {
-            background-color: #1a2a3e; /* Darker blue card background */
-            padding: 2.5rem;
-            border-radius: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .card {
+            background-color: #1a202c;
+            border-radius: 1rem;
+            padding: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-decoration: none; /* Remove underline from links */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            transition: transform 0.3s ease-in-out;
         }
-        .block-card:hover {
+        .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        }
-        .block-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #007bff; /* Blue heading */
-            margin-bottom: 0.75rem;
-        }
-        .block-card p {
-            color: #ccc;
-            margin-bottom: 1rem;
         }
         .btn-primary {
             background-color: #007bff;
@@ -61,7 +44,6 @@
         }
         .btn-primary:hover {
             background-color: #0056b3;
-            transform: translateY(-2px);
         }
         .nav-link {
             transition: all 0.3s ease;
@@ -77,12 +59,11 @@
         <nav class="container flex justify-between items-center">
             <a href="index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
             <div class="space-x-8 hidden md:flex">
-                <a href="blog.html" class="nav-link text-white hover:text-blue-500">Blog</a>
                 <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
                 <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
                 <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
                 <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
-                <a href="Consultaion.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
+                <a href="Consultation.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
                 <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
@@ -91,48 +72,45 @@
         </nav>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
-        <a href="blog.html" class="block py-2 text-white hover:text-blue-500">Blog</a>
-        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
-        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
-        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
-        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
-        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
-        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
-    </div>
-
-    <section id="phases" class="py-16">
+    <section class="py-20">
         <div class="container">
-            <h2 class="section-title">Program Phases</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <a href="phase1.html" class="block-card">
-                    <h3>Phase 1: Foundations</h3>
-                    <p>
-                        Building a strong base in financial literacy and data fundamentals.
+            <h1 class="section-title">Development Phases</h1>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Phase 1 Card (Updated) -->
+                <div class="card text-center">
+                    <h3 class="text-2xl font-semibold text-blue-400 mb-3">Phase 1: Foundations</h3>
+                    <p class="text-gray-400 mb-4">
+                        Building the core knowledge and skills in finance and data analysis.
                     </p>
-                    <span class="btn-primary">Explore Phase 1</span>
-                </a>
-                <a href="phase2.html" class="block-card">
-                    <h3>Phase 2: Applied Data Science</h3>
-                    <p>
+                    <a href="phases/phase1/week1.html" class="btn-primary inline-block text-sm">Explore Week 1</a>
+                </div>
+
+                <!-- Placeholder for Phase 2 -->
+                <div class="card text-center">
+                    <h3 class="text-2xl font-semibold text-blue-400 mb-3">Phase 2: Data & Modeling</h3>
+                    <p class="text-gray-400 mb-4">
                         Applying machine learning techniques to real-world financial datasets and developing predictive models.
                     </p>
-                    <span class="btn-primary">Explore Phase 2</span>
-                </a>
-                <a href="phase3.html" class="block-card">
-                    <h3>Phase 3: Advanced AI & Strategy</h3>
-                    <p>
+                    <a href="phases/phase2/week1.html" class="btn-primary inline-block text-sm">Explore Phase 2</a>
+                </div>
+
+                <!-- Placeholder for Phase 3 -->
+                <div class="card text-center">
+                    <h3 class="text-2xl font-semibold text-blue-400 mb-3">Phase 3: Advanced AI & Strategy</h3>
+                    <p class="text-gray-400 mb-4">
                         Focusing on advanced AI models, algorithmic trading strategies, and complex financial problem-solving.
                     </p>
-                    <span class="btn-primary">Explore Phase 3</span>
-                </a>
-                <a href="phase4.html" class="block-card">
-                    <h3>Phase 4: Innovation & Future Trends</h3>
-                    <p>
+                    <a href="phases/phase3/week1.html" class="btn-primary inline-block text-sm">Explore Phase 3</a>
+                </div>
+
+                <!-- Placeholder for Phase 4 -->
+                <div class="card text-center">
+                    <h3 class="text-2xl font-semibold text-blue-400 mb-3">Phase 4: Innovation & Future Trends</h3>
+                    <p class="text-gray-400 mb-4">
                         Exploring emerging technologies, decentralized finance, and the future landscape of AI in finance.
                     </p>
-                    <span class="btn-primary">Explore Phase 4</span>
-                </a>
+                    <a href="phases/phase4/week1.html" class="btn-primary inline-block text-sm">Explore Phase 4</a>
+                </div>
             </div>
         </div>
     </section>
@@ -143,13 +121,5 @@
         </div>
     </footer>
 
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
