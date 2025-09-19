@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The FinTech Alchemist - Blog</title>
+    <title>The FinTech Alchemist - Blog Post</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d111c; /* Dark background inspired by Revolut */
+            background-color: #0d111c;
             color: #e0e6f0;
         }
         .container {
@@ -17,33 +17,11 @@
             margin: 0 auto;
             padding: 1.5rem;
         }
-        .header-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1;
-            color: #fff;
-            text-align: center;
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #1f2a40, #0d111c);
-        }
-        .btn-primary {
-            background-color: #007bff; /* Blue accent color */
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
         .nav-link {
             transition: all 0.3s ease;
         }
         .nav-link:hover {
-            color: #007bff; /* Blue hover for navigation */
+            color: #007bff;
         }
     </style>
 </head>
@@ -51,15 +29,14 @@
 
     <header class="py-6 border-b border-gray-800">
         <nav class="container flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
+            <a href="../../../index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
             <div class="space-x-8 hidden md:flex">
-                <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
-                <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
-                <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
-                <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
-                <a href="blog.html" class="nav-link text-blue-500">Blog</a>
-                <a href="Consultation%20&%20Collaboration.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
-                <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
+                <a href="../../../about.html" class="nav-link text-white hover:text-blue-500">About</a>
+                <a href="../../../projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
+                <a href="../../../phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
+                <a href="../../../learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
+                <a href="../../../Consultation.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
+                <a href="../../../contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -67,76 +44,19 @@
         </nav>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
-        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
-        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
-        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
-        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
-        <a href="blog.html" class="block py-2 text-blue-500">Blog</a>
-        <a href="Consultation%20&%20Collaboration.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
-        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
-    </div>
-
-    <section class="hero-section text-center py-24 md:py-24">
+    <section class="py-20">
         <div class="container">
-            <h1 class="header-title mb-4">Blog & Insights</h1>
-            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-                Sharing thoughts, analysis, and strategies on the intersection of finance and technology.
-            </p>
-        </div>
-    </section>
-
-    <section id="blog-posts" class="py-20">
-        <div class="container">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">The Rise of AI in Algorithmic Trading</h3>
-                    <p class="text-gray-400">
-                        An in-depth look at how artificial intelligence is revolutionizing the world of high-frequency trading and investment strategy.
-                    </p>
-                    <a href="blog-post-1.html" class="inline-block mt-4 text-blue-300 hover:underline">Read More &rarr;</a>
-                </div>
-                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Demystifying Decentralized Finance (DeFi)</h3>
-                    <p class="text-gray-400">
-                        A guide to understanding the core concepts of DeFi, its potential, and the risks involved for new investors.
-                    </p>
-                    <a href="blog-post-2.html" class="inline-block mt-4 text-blue-300 hover:underline">Read More &rarr;</a>
-                </div>
-                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Future of Payment Systems: A Global Perspective</h3>
-                    <p class="text-gray-400">
-                        Exploring the trends shaping the future of digital payments, from instant transfers to blockchain-based solutions.
-                    </p>
-                    <a href="blog-post-3.html" class="inline-block mt-4 text-blue-300 hover:underline">Read More &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact-info" class="py-20 bg-gray-900 text-center">
-        <div class="container">
-            <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
-            <p class="text-gray-400 mb-8 max-w-3xl mx-auto">
-                Ready to transform your financial strategy? Contact me to discuss your goals.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
-                <div class="text-center">
-                    <h3 class="text-xl font-semibold mb-2">Email</h3>
-                    <p class="text-blue-300 hover:underline"><a href="mailto:your.email@example.com">your.email@example.com</a></p>
-                </div>
-                <div class="text-center">
-                    <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
-                    <p class="text-blue-300 hover:underline"><a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></p>
-                </div>
-                <div class="text-center">
-                    <h3 class="text-xl font-semibold mb-2">GitHub</h3>
-                    <p class="text-blue-300 hover:underline"><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
-                </div>
-            </div>
-            <p class="text-gray-500 mt-12 text-sm">
-                (Please replace placeholder emails and social media links with your actual information.)
-            </p>
+            <article class="prose prose-invert max-w-none mx-auto">
+                <h1 class="text-4xl font-bold text-center mb-6">Your Blog Post Title Here</h1>
+                <p class="text-gray-400 text-center text-sm mb-10">Published on [Date] by [Your Name]</p>
+                <p>Welcome to my first blog post! In this entry, I want to explore the complex landscape of financial technology (FinTech) regulation. As innovation in this space accelerates, regulators worldwide are scrambling to keep pace, aiming to protect consumers while fostering growth.</p>
+                <h2>The Role of Regulatory Bodies</h2>
+                <p>Regulatory bodies like the SEC, the FCA, and various central banks play a crucial role in shaping the FinTech ecosystem. Their primary goals include maintaining market stability, preventing fraud, and ensuring fair competition. However, this often leads to a delicate balance between encouraging new technologies and imposing strict compliance measures.</p>
+                <h3>Challenges and Opportunities</h3>
+                <p>The rise of cryptocurrencies, decentralized finance (DeFi), and blockchain technology presents unique challenges. How do you regulate a decentralized network? This is where the industry and regulators must collaborate to create a framework that is both secure and flexible. This collaboration represents a huge opportunity for new business models that can operate safely within the established rules.</p>
+                <p>Thanks for reading! Stay tuned for more insights into my projects and learnings.</p>
+                <a href="../week1.html" class="inline-block mt-4 text-blue-300 hover:underline">← Back to Week 1</a>
+            </article>
         </div>
     </section>
 
@@ -145,15 +65,6 @@
             <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 
 </body>
 </html>
