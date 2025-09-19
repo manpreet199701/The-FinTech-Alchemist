@@ -3,128 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The FinTech Alchemist</title>
+    <title>Data-Driven Wealth</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+            background-color: #0d111c; /* Dark background inspired by Revolut */
+            color: #e0e6f0;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 1.5rem;
         }
-        .section-title {
-            font-size: 2.5rem;
+        .header-title {
+            font-size: 3.5rem;
             font-weight: 700;
-            color: #1a202c;
-            margin-bottom: 2rem;
+            line-height: 1;
+            color: #fff;
             text-align: center;
-            position: relative;
-            padding-bottom: 0.5rem;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: #4c51bf;
-            border-radius: 2px;
+        .hero-section {
+            background: linear-gradient(135deg, #1f2a40, #0d111c);
         }
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .btn-primary {
+            background-color: #007bff; /* Blue accent color */
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
         }
         .nav-link {
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .nav-link:hover {
-            color: #4c51bf;
+            color: #007bff; /* Blue hover for navigation */
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="antialiased">
 
-    <header class="navbar py-4">
-        <div class="container flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-indigo-700">The FinTech Alchemist</a>
-            <nav>
-                <a href="index.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Home</a>
-                <a href="projects.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Projects</a>
-                <a href="phases.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Phases</a>
-                <a href="about.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">About Me</a>
-                <a href="learning.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Learning Journey</a>
-                <a href="consultation.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Consultation</a>
-                <a href="contact.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Contact</a>
-            </nav>
-        </div>
+    <header class="py-6 border-b border-gray-800">
+        <nav class="container flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-white">Data-Driven Wealth</a>
+            <div class="space-x-8 hidden md:flex">
+                <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
+                <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
+                <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
+                <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
+                <a href="Consultation%20&%20Collaboration.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
+                <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
     </header>
 
-    <section class="py-20 text-center bg-indigo-700 text-white">
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
+        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
+        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
+        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
+        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
+        <a href="Consultation%20&%20Collaboration.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
+        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
+    </div>
+
+    <section class="hero-section text-center py-24 md:py-36">
         <div class="container">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Empower Your Financial Future</h1>
-            <p class="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto">
-                Discover how data science and AI can reshape your financial decisions and create lasting wealth.
+            <h1 class="header-title mb-4">Unlocking Financial Potential with AI</h1>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                Discover the synergy of finance, data science, and technology to build smarter, more profitable strategies.
             </p>
-            <a href="projects.html" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-100 transition duration-300 shadow-lg">
-                Explore My Projects
-            </a>
+            <a href="projects.html" class="btn-primary">Explore My Work</a>
         </div>
     </section>
 
-    <section id="featured-projects" class="py-16">
+    <section id="why" class="py-20">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">Personal Finance Planner</h3>
-                    <p class="text-gray-600 mb-4">
-                        An intuitive tool built with Python to help you track your expenses, manage your budget, and visualize your savings goals with clear, data-driven insights.
+            <h2 class="text-4xl font-bold text-center mb-12">Why Data-Driven Wealth?</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Precision Analysis</h3>
+                    <p class="text-gray-400">
+                        Harnessing the power of data to find opportunities others miss.
                     </p>
-                    <a href="projects.html#personal-finance" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">Retirement Planning Tool</h3>
-                    <p class="text-gray-600 mb-4">
-                        Leveraging data science to project your retirement savings and analyze various investment scenarios to help you plan for a secure future.
+                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Algorithmic Edge</h3>
+                    <p class="text-gray-400">
+                        Developing automated systems for consistent performance.
                     </p>
-                    <a href="projects.html#retirement-planning" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Future-Focused</h3>
+                    <p class="text-gray-400">
+                        Staying ahead of the curve with continuous learning and innovation.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-gray-800 text-white text-center">
+    <section id="contact-info" class="py-20 bg-gray-900 text-center">
         <div class="container">
-            <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Finances?</h2>
-            <p class="text-lg mb-8">
-                Let's connect and explore how a data-driven approach can help you achieve your financial goals.
+            <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
+            <p class="text-gray-400 mb-8 max-w-3xl mx-auto">
+                Ready to transform your financial strategy? Contact me to discuss your goals.
             </p>
-            <div class="flex flex-col items-center">
-                <a href="contact.html" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-700 transition duration-300 mb-4">
-                    Get in Touch
-                </a>
-                <p class="text-md md:text-lg mb-4 text-gray-400">
-                    If you found any of these resources or projects useful, or simply appreciate my work, feel free to buy me a ☕️—it helps fuel late-night coding sessions and continued learning!
-                </p>
-                <a href="https://www.buymeacoffee.com/your-username" target="_blank" class="bg-yellow-400 text-black font-bold py-3 px-6 rounded-full inline-flex items-center shadow-lg hover:bg-yellow-500 transition duration-300">
-                    <span class="mr-2">☕️</span> Buy me a Coffee
-                </a>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <p class="text-blue-300 hover:underline"><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
+                    <p class="text-blue-300 hover:underline"><a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold mb-2">GitHub</h3>
+                    <p class="text-blue-300 hover:underline"><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
+                </div>
             </div>
+            <p class="text-gray-500 mt-12 text-sm">
+                (Please replace placeholder emails and social media links with your actual information.)
+            </p>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+    <footer class="bg-gray-900 text-gray-500 py-6 text-center">
         <div class="container">
-            <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
+            <p>&copy; 2025 Data-Driven Wealth. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
