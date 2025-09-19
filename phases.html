@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The FinTech Alchemist - Phases</title>
+    <title>Data-Driven Wealth - Phases</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+            background-color: #0d111c;
+            color: #e0e6f0;
         }
         .container {
             max-width: 1200px;
@@ -20,108 +20,134 @@
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #1a202c;
+            color: #fff;
             margin-bottom: 2rem;
             text-align: center;
-            position: relative;
-            padding-bottom: 0.5rem;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: #4c51bf;
-            border-radius: 2px;
+        .block-card {
+            background-color: #1a2a3e; /* Darker blue card background */
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none; /* Remove underline from links */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .block-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
         }
-        .nav-link {
-            transition: color 0.3s ease;
+        .block-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #007bff; /* Blue heading */
+            margin-bottom: 0.75rem;
         }
-        .nav-link:hover {
-            color: #4c51bf;
+        .block-card p {
+            color: #ccc;
+            margin-bottom: 1rem;
         }
         .btn-primary {
-            background-color: #4c51bf;
+            background-color: #007bff;
             color: #fff;
-            font-weight: 600;
             padding: 0.75rem 1.5rem;
             border-radius: 9999px;
-            text-align: center;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         .btn-primary:hover {
-            background-color: #434190;
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #007bff;
         }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <header class="navbar py-4">
-        <div class="container flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-indigo-700">The FinTech Alchemist</a>
-            <nav>
-                <a href="index.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Home</a>
-                <a href="projects.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Projects</a>
-                <a href="phases.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Phases</a>
-                <a href="about.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">About Me</a>
-                <a href="learning.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Learning Journey</a>
-                <a href="consultation.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Consultation</a>
-                <a href="contact.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Contact</a>
-            </nav>
-        </div>
+    <header class="py-6 border-b border-gray-800">
+        <nav class="container flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-white">Data-Driven Wealth</a>
+            <div class="space-x-8 hidden md:flex">
+                <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
+                <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
+                <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
+                <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
+                <a href="Consultation%20&%20Collaboration.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
+                <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
     </header>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
+        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
+        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
+        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
+        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
+        <a href="Consultation%20&%20Collaboration.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
+        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
+    </div>
 
     <section id="phases" class="py-16">
         <div class="container">
-            <h2 class="section-title">My Development Phases</h2>
-            <p class="text-center text-lg max-w-2xl mx-auto mb-12">
-                This project is structured in a phased approach, detailing my learning and development journey in applying data science to finance.
-            </p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">Phase 1: Foundations</h3>
-                    <p class="text-gray-600 mb-4">
-                        Mastering the core principles of financial analysis, data manipulation with Python (Pandas, NumPy), and foundational visualization techniques (Matplotlib, Seaborn).
+            <h2 class="section-title">Program Phases</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <a href="phase1.html" class="block-card">
+                    <h3>Phase 1: Foundations</h3>
+                    <p>
+                        Building a strong base in financial literacy and data fundamentals.
                     </p>
-                    <a href="phase1.html" class="btn-primary inline-block text-sm">Explore Phase 1</a>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">Phase 2: Data-Driven Tools</h3>
-                    <p class="text-gray-600 mb-4">
-                        Applying machine learning techniques to real-world financial datasets and developing predictive models for personal finance and investment analysis.
+                    <span class="btn-primary">Explore Phase 1</span>
+                </a>
+                <a href="phase2.html" class="block-card">
+                    <h3>Phase 2: Applied Data Science</h3>
+                    <p>
+                        Applying machine learning techniques to real-world financial datasets and developing predictive models.
                     </p>
-                    <a href="phase2.html" class="btn-primary inline-block text-sm">Explore Phase 2</a>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">Phase 3: Advanced AI & Strategy</h3>
-                    <p class="text-gray-600 mb-4">
-                        Focusing on advanced AI models, algorithmic trading strategies, and complex financial problem-solving. This includes using APIs like Alpaca for real-time data.
+                    <span class="btn-primary">Explore Phase 2</span>
+                </a>
+                <a href="phase3.html" class="block-card">
+                    <h3>Phase 3: Advanced AI & Strategy</h3>
+                    <p>
+                        Focusing on advanced AI models, algorithmic trading strategies, and complex financial problem-solving.
                     </p>
-                    <a href="phase3.html" class="btn-primary inline-block text-sm">Explore Phase 3</a>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">Phase 4: Innovation & Future Trends</h3>
-                    <p class="text-gray-600 mb-4">
-                        Exploring emerging technologies, decentralized finance (DeFi), blockchain, and the future landscape of AI in finance.
+                    <span class="btn-primary">Explore Phase 3</span>
+                </a>
+                <a href="phase4.html" class="block-card">
+                    <h3>Phase 4: Innovation & Future Trends</h3>
+                    <p>
+                        Exploring emerging technologies, decentralized finance, and the future landscape of AI in finance.
                     </p>
-                    <a href="phase4.html" class="btn-primary inline-block text-sm">Explore Phase 4</a>
-                </div>
+                    <span class="btn-primary">Explore Phase 4</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+    <footer class="bg-gray-900 text-gray-500 py-6 text-center">
         <div class="container">
-            <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
+            <p>&copy; 2025 Data-Driven Wealth. All rights reserved.</p>
         </div>
     </footer>
 
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
