@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Driven Wealth - Consultation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #4c51bf;
+            border-radius: 2px;
+        }
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #4c51bf;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar py-4">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-700">Data-Driven Wealth</a>
+            <nav>
+                <a href="index.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Home</a>
+                <a href="projects.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Projects</a>
+                <a href="phases.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Phases</a>
+                <a href="about.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">About Me</a>
+                <a href="learning.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Learning Journey</a>
+                <a href="consultation.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Consultation</a>
+                <a href="contact.html" class="nav-link text-gray-600 font-semibold px-3 py-2 rounded-md hover:bg-gray-200">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="consultation" class="py-16">
+        <div class="container">
+            <h2 class="section-title">Consultation & Collaboration</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">Financial Data Analysis</h3>
+                    <p class="text-gray-600 mb-4">
+                        I offer bespoke data analysis services to help you extract actionable insights from your financial data. This includes market trend analysis, predictive modeling, and performance evaluation.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                        <li>Market trend analysis and forecasting.</li>
+                        <li>Portfolio performance and risk assessment.</li>
+                        <li>Data visualization and dashboard creation.</li>
+                    </ul>
+                    <a href="contact.html" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-indigo-700 transition duration-300">Request a Quote</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">Collaborative Projects</h3>
+                    <p class="text-gray-600 mb-4">
+                        I am open to partnering on innovative finance-related initiatives, including joint research, content creation, and FinTech startup advisory.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1 mb-4">
+                        <li>Joint research and whitepaper development.</li>
+                        <li>Guest blogging or content collaboration.</li>
+                        <li>Financial modeling for business plans.</li>
+                    </ul>
+                    <a href="contact.html" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-indigo-700 transition duration-300">Propose a Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+        <div class="container">
+            <p>&copy; 2025 Data-Driven Wealth. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
