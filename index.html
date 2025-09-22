@@ -45,6 +45,22 @@
         .nav-link:hover {
             color: #007bff; /* Blue hover for navigation */
         }
+        .form-message {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+        .form-message.success {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .form-message.error {
+            background-color: #dc3545;
+            color: #fff;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -58,21 +74,23 @@
                 <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
                 <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
                 <a href="Consultation.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
+                <a href="#services" class="nav-link text-white hover:text-blue-500">Services</a>
                 <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </nav>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
-        
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center z-50">
         <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
         <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
         <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
         <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
-        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
+        <a href="Consultation.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
+        <a href="#services" class="block py-2 text-white hover:text-blue-500">Services</a>
         <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
     </div>
 
@@ -131,26 +149,48 @@
         </div>
     </section>
 
-    <section id="contact-info" class="py-20 bg-gray-900 text-center">
+    <!-- New Services Section -->
+    <section id="services" class="py-20 bg-gray-900">
+        <div class="container text-center">
+            <h2 class="text-4xl font-bold mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Custom Algorithmic Models</h3>
+                    <p class="text-gray-400">
+                        We design and build bespoke financial models tailored to your specific investment strategies and goals.
+                    </p>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Data & Market Intelligence</h3>
+                    <p class="text-gray-400">
+                        Leverage our deep market analysis and data science expertise to gain a competitive advantage.
+                    </p>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">FinTech Strategy Consulting</h3>
+                    <p class="text-gray-400">
+                        Get expert advice on how to integrate the latest financial technologies into your business operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-info" class="py-20 bg-gray-800 text-center">
         <div class="container">
             <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
             <p class="text-gray-400 mb-8 max-w-3xl mx-auto">
                 Ready to transform your financial strategy? Contact me to discuss your goals.
             </p>
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
-                <div class="text-center">
-                    <h3 class="text-xl font-semibold mb-2">Email</h3>
-                    <p class="text-blue-300 hover:underline"><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <form id="contact-form" class="max-w-xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
-                <div class="text-center">
-                    <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
-                    <p class="text-blue-300 hover:underline"><a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></p>
-                </div>
-                <div class="text-center">
-                    <h3 class="text-xl font-semibold mb-2">GitHub</h3>
-                    <p class="text-blue-300 hover:underline"><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
-                </div>
-            </div>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                <button type="submit" class="btn-primary w-full">Send Message</button>
+                <div id="form-status" class="form-message"></div>
+            </form>
             <p class="text-gray-500 mt-12 text-sm">
                 (Please replace placeholder emails and social media links with your actual information.)
             </p>
@@ -166,9 +206,38 @@
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
 
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden', !isHidden);
+            closeIcon.classList.toggle('hidden', isHidden);
+        });
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // In a real-world scenario, you would send this data to a backend server.
+            // For now, we'll just simulate a successful submission.
+            
+            formStatus.style.display = 'block';
+            formStatus.classList.remove('success', 'error');
+
+            try {
+                // Simulate a network request
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                formStatus.textContent = 'Message sent successfully!';
+                formStatus.classList.add('success');
+                contactForm.reset();
+            } catch (error) {
+                formStatus.textContent = 'Failed to send message. Please try again later.';
+                formStatus.classList.add('error');
+            }
         });
     </script>
 
