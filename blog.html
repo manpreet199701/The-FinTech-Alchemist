@@ -24,27 +24,6 @@
             margin-bottom: 2rem;
             text-align: center;
         }
-        .card {
-            background-color: #1a202c;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .btn-primary {
-            background-color: #007bff;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
         .nav-link {
             transition: all 0.3s ease;
         }
@@ -55,16 +34,16 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header Section -->
     <header class="py-6 border-b border-gray-800">
         <nav class="container flex justify-between items-center">
             <a href="index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
             <div class="space-x-8 hidden md:flex">
+                <a href="blog.html" class="nav-link text-white hover:text-blue-500">Blog</a>
                 <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
                 <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
                 <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
                 <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
-                <a href="Consultation.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
+                <a href="Consultaion.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
                 <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
@@ -73,46 +52,50 @@
         </nav>
     </header>
 
-    <!-- Main Blog Content -->
-    <section class="py-20">
-        <div class="container">
-            <h1 class="section-title">Latest Blog Posts</h1>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1 Card -->
-                <div class="card text-center">
-                    <h3 class="text-2xl font-semibold text-blue-400 mb-3">The Regulatory Landscape</h3>
-                    <p class="text-gray-400 mb-4">
-                        A deep dive into how FinTech is reshaping financial regulations around the world.
-                    </p>
-                    <a href="blog/blog1.html" class="btn-primary inline-block text-sm">Read More</a>
-                </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
+        <a href="blog.html" class="block py-2 text-white hover:text-blue-500">Blog</a>
+        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
+        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
+        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
+        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
+        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
+        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
+    </div>
 
-                <!-- Blog Post 2 Card -->
-                <div class="card text-center">
-                    <h3 class="text-2xl font-semibold text-blue-400 mb-3">AI's Role in Trading</h3>
-                    <p class="text-gray-400 mb-4">
-                        Exploring how AI is transforming algorithmic trading strategies and market analysis.
-                    </p>
-                    <a href="blog/blog2.html" class="btn-primary inline-block text-sm">Read More</a>
-                </div>
+    <main class="container py-16">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8 text-center">The Blog</h1>
+        <p class="text-lg text-gray-400 text-center mb-12">Here you can find all my latest thoughts, updates, and deep dives into the world of FinTech.</p>
 
-                <!-- Blog Post 3 Card -->
-                <div class="card text-center">
-                    <h3 class="text-2xl font-semibold text-blue-400 mb-3">The Rise of DeFi</h3>
-                    <p class="text-gray-400 mb-4">
-                        An introduction to Decentralized Finance (DeFi) and its potential to disrupt traditional banking.
-                    </p>
-                    <a href="blog/blog3.html" class="btn-primary inline-block text-sm">Read More</a>
-                </div>
+        <!-- Blog Post List -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Example Blog Post Card -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg transform transition duration-300 hover:scale-105">
+                <a href="blog/blog1.html" class="block">
+                    <img class="w-full rounded-lg mb-4" src="https://raw.githubusercontent.com/manpreet199701/The-FinTech-Alchemist/f3606b6cae617b9dff237df7dcebaca7e5a5d72b/images/Gemini_Generated_Image_vor8qavor8qavor8.png" alt="A conceptual image representing the blend of finance and artificial intelligence.">
+                    <h2 class="text-xl font-bold text-white hover:text-blue-400">My 3-Month Journey to Become a FinTech Alchemist</h2>
+                    <p class="text-gray-400 text-sm mt-2">Published: Oct 20, 2025</p>
+                    <p class="text-gray-400 mt-4">Welcome to the start of a journey that's been years in the making. For a long time, my career has been a mix of commerce, logistics, and finance...</p>
+                    <span class="text-blue-400 mt-4 inline-block hover:underline">Read More &rarr;</span>
+                </a>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer Section -->
+            <!-- You can add more blog post cards here -->
+        </div>
+    </main>
+
     <footer class="bg-gray-900 text-gray-500 py-6 text-center">
         <div class="container">
             <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
