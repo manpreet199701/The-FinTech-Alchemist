@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d111c; /* Dark background inspired by Revolut */
+            background-color: #0d111c;
             color: #e0e6f0;
         }
         .container {
@@ -17,185 +17,154 @@
             margin: 0 auto;
             padding: 1.5rem;
         }
-        .header-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1;
-            color: #fff;
-            text-align: center;
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #1f2a40, #0d111c);
-        }
-        .btn-primary {
-            background-color: #007bff; /* Blue accent color */
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
         .nav-link {
             transition: all 0.3s ease;
         }
         .nav-link:hover {
-            color: #007bff; /* Blue hover for navigation */
+            color: #007bff;
         }
-        .form-message {
-            margin-top: 1rem;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            font-weight: 600;
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        .slideshow-slide {
             display: none;
         }
-        .form-message.success {
-            background-color: #28a745;
-            color: #fff;
+        .slideshow-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            object-fit: cover;
         }
-        .form-message.error {
-            background-color: #dc3545;
-            color: #fff;
+        .slideshow-text {
+            color: #f2f2f2;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="py-6 border-b border-gray-800">
-        <nav class="container flex gap-x-20 items-center">
+        <nav class="container flex justify-between items-center">
             <a href="index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
             <div class="space-x-8 hidden md:flex">
-                <a href="about.html" class="nav-link text-white hover:text-blue-500">About me </a>
+                <a href="blog.html" class="nav-link text-white hover:text-blue-500">Blog</a>
+                <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
                 <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
                 <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
                 <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
-                <a href="Consultation.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
-                <a href="#services" class="nav-link text-white hover:text-blue-500">Services</a>
+                <a href="Consultaion.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
                 <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </nav>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center z-50">
-        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About me</menu></a>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
+        <a href="blog.html" class="block py-2 text-white hover:text-blue-500">Blog</a>
+        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
         <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
         <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
         <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
-        <a href="Consultation.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
-        <a href="#services" class="block py-2 text-white hover:text-blue-500">Services</a>
+        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
         <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
     </div>
 
-    <section class="hero-section text-center py-24 md:py-36">
-        <div class="container">
-            <h1 class="header-title mb-4">Unlocking Financial Potential with AI</h1>
-            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-                Discover the synergy of finance, data science, and technology to build smarter, more profitable strategies.
-            </p>
-            <a href="projects.html" class="btn-primary">Explore My Work</a>
+    <main class="container py-16">
+        <!-- Main content for the homepage -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">The FinTech Alchemist</h1>
+            <p class="text-lg sm:text-xl text-gray-400">Transforming finance with technology. Follow my 3-month journey into the world of AI.</p>
         </div>
-    </section>
 
-    <section id="why" class="py-20">
-        <div class="container">
-            <h2 class="text-4xl font-bold text-center mb-12">Why The FinTech Alchemist?</h2>
-            <section id="support" class="py-16 text-center">
-                <div class="container">
-                    <h2 class="section-title">Fuel My Work</h2>
-                    <div class="card max-w-xl mx-auto">
-                        <p class="text-lg mb-6">
-                            If you found any of these resources or projects useful, or simply appreciate my work, feel free to buy me a ☕️—it helps fuel late-night coding sessions and continued learning!
-                        </p>
-                        <a href="YOUR_DONATION_LINK_HERE" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center space-x-2 text-xl hover:scale-105 transform">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
-                            </svg>
-                            <span>Buy Me a Coffee</span>
-                        </a>
-                        <p class="text-sm text-gray-500 mt-4">
-                            (This link is a placeholder. Please replace "YOUR_DONATION_LINK_HERE" with your actual donation link.)
-                        </p>
+        <!-- Latest Blog Post Section -->
+        <div class="bg-gray-800 rounded-xl p-8 mb-12 shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Latest Blog Post</h2>
+            <a href="blog1.html" class="text-xl text-blue-400 hover:underline">
+                The FinTech Alchemist - My 3-Month Journey
+            </a>
+            <p class="text-gray-400 mt-2">
+                Documenting my intensive 3-month plan to become a FinTech Alchemist...
+            </p>
+        </div>
+
+        <!-- Latest Projects Slideshow -->
+        <div class="bg-gray-800 rounded-xl p-8 mb-12 shadow-lg">
+            <h2 class="text-2xl font-bold mb-4 text-center">Featured Projects</h2>
+            <div class="slideshow-container mt-6">
+                <!-- Slides will be added here -->
+                <div class="slideshow-slide fade">
+                    <img src="https://placehold.co/1000x500/2f4f4f/ffffff?text=Project+1+-+Trading+Bot" alt="Placeholder for a trading bot project">
+                    <div class="slideshow-text">
+                        <h3 class="text-xl font-bold">Project 1: Algorithmic Trading Bot</h3>
+                        <p class="text-sm">A Python-based bot that uses historical data to make automated trading decisions.</p>
                     </div>
                 </div>
-            </section>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Precision Analysis</h3>
-                    <p class="text-gray-400">
-                        Harnessing the power of data to find opportunities others miss.
-                    </p>
+                <div class="slideshow-slide fade">
+                    <img src="https://placehold.co/1000x500/4682b4/ffffff?text=Project+2+-+Risk+Analysis" alt="Placeholder for a risk analysis project">
+                    <div class="slideshow-text">
+                        <h3 class="text-xl font-bold">Project 2: AI-Powered Risk Analysis</h3>
+                        <p class="text-sm">A machine learning model that predicts loan default risk for financial institutions.</p>
+                    </div>
                 </div>
-                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Algorithmic Edge</h3>
-                    <p class="text-gray-400">
-                        Developing automated systems for consistent performance.
-                    </p>
+                <div class="slideshow-slide fade">
+                    <img src="https://placehold.co/1000x500/808000/ffffff?text=Project+3+-+Sentiment+Analysis" alt="Placeholder for a sentiment analysis project">
+                    <div class="slideshow-text">
+                        <h3 class="text-xl font-bold">Project 3: Financial News Sentiment Tracker</h3>
+                        <p class="text-sm">An application that analyzes news headlines to gauge market sentiment in real-time.</p>
+                    </div>
                 </div>
-                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Future-Focused</h3>
-                    <p class="text-gray-400">
-                        Staying ahead of the curve with continuous learning and innovation.
-                    </p>
-                </div>
+                
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </div>
-    </section>
 
-    <!-- New Services Section -->
-    <section id="services" class="py-20 bg-gray-900">
-        <div class="container text-center">
-            <h2 class="text-4xl font-bold mb-12">Our Services</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Custom Algorithmic Models</h3>
-                    <p class="text-gray-400">
-                        We design and build bespoke financial models tailored to your specific investment strategies and goals.
-                    </p>
-                </div>
-                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">Data & Market Intelligence</h3>
-                    <p class="text-gray-400">
-                        Leverage our deep market analysis and data science expertise to gain a competitive advantage.
-                    </p>
-                </div>
-                <div class="p-6 rounded-xl bg-gray-800 shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-3 text-blue-400">FinTech Strategy Consulting</h3>
-                    <p class="text-gray-400">
-                        Get expert advice on how to integrate the latest financial technologies into your business operations.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact-info" class="py-20 bg-gray-800 text-center">
-        <div class="container">
-            <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
-            <p class="text-gray-400 mb-8 max-w-3xl mx-auto">
-                Ready to transform your financial strategy? Contact me to discuss your goals.
+        <!-- Coffee code and image section -->
+        <div class="flex flex-col items-center justify-center p-8 bg-gray-900 rounded-3xl shadow-lg mt-12">
+            <h2 class="text-3xl font-bold text-white mb-4">Like What I Do?</h2>
+            <img src="https://placehold.co/200x200/2a2a3e/e0e6f0?text=Coffee+Cup" alt="A stylized image of a coffee cup" class="w-32 h-32 rounded-full mb-4">
+            <p class="text-center text-gray-400 mb-6 max-w-xl">
+                If you find my journey inspiring or my projects helpful, consider supporting my work. Every cup of coffee helps fuel the next great idea!
             </p>
-            <form id="contact-form" class="max-w-xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-                <textarea id="message" name="message" rows="5" placeholder="Your Message" required class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                <button type="submit" class="btn-primary w-full">Send Message</button>
-                <div id="form-status" class="form-message"></div>
-            </form>
-            <p class="text-gray-500 mt-12 text-sm">
-                (Please replace placeholder emails and social media links with your actual information.)
-            </p>
+            <a href="YOUR_BUY_ME_A_COFFEE_LINK_HERE" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+                Buy Me a Coffee
+            </a>
         </div>
-    </section>
+    </main>
 
     <footer class="bg-gray-900 text-gray-500 py-6 text-center">
         <div class="container">
@@ -206,40 +175,33 @@
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const closeIcon = document.getElementById('close-icon');
 
         mobileMenuButton.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.toggle('hidden');
-            hamburgerIcon.classList.toggle('hidden', !isHidden);
-            closeIcon.classList.toggle('hidden', isHidden);
+            mobileMenu.classList.toggle('hidden');
         });
 
-        const contactForm = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
+        // Slideshow logic
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
 
-            // In a real-world scenario, you would send this data to a backend server.
-            // For now, we'll just simulate a successful submission.
-            
-            formStatus.style.display = 'block';
-            formStatus.classList.remove('success', 'error');
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
 
-            try {
-                // Simulate a network request
-                await new Promise(resolve => setTimeout(resolve, 1000));
-
-                formStatus.textContent = 'Message sent successfully!';
-                formStatus.classList.add('success');
-                contactForm.reset();
-            } catch (error) {
-                formStatus.textContent = 'Failed to send message. Please try again later.';
-                formStatus.classList.add('error');
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slideshow-slide");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
             }
-        });
+            slides[slideIndex-1].style.display = "block";  
+        }
     </script>
-
 </body>
 </html>
