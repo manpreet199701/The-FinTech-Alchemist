@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The FinTech Alchemist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Added 'Pacifico' for a sweeter/cooler handwritten font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -70,7 +71,45 @@
         .prev:hover, .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
+        /* --- Custom 'Buy Me a Coffee' Modal Styles (Animations for opening/closing) --- */
+        /* Styling for the backdrop */
+        .modal-backdrop {
+            transition: opacity 0.3s ease-out;
+            pointer-events: none; /* Initially allow clicks to pass through */
+        }
+        .modal-open .modal-backdrop {
+            opacity: 1;
+            pointer-events: auto; /* Block clicks when open */
+        }
+        .modal-content {
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+        }
+        .modal-open .modal-content {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        /* --- End Custom Styles --- */
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-primary': '#FFDD00', /* Bright yellow for CTA visibility */
+                        'coffee-text': '#0d111c', /* Text to match the dark theme body background */
+                        'coffee-accent': '#007bff', /* Use your primary accent blue */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        cute: ['Pacifico', 'cursive'], // Added cute font
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="antialiased">
 
@@ -152,17 +191,86 @@
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </div>
+        
+        <!-- STATIC & CUTE 'BUY ME A COFFEE' SECTION -->
+        <div class="flex flex-col items-center justify-center p-8 bg-gray-900 rounded-3xl shadow-lg mt-12 mb-12 border-4 border-coffee-primary/50 transition-shadow hover:shadow-2xl hover:shadow-coffee-primary/20">
+            
+            <!-- UPDATED: Cute Coffee Mug Image (using uploaded file) -->
+            <!-- The dimensions are set to look prominent but not huge, matching the "cute" request -->
+            <img src="uploaded:images.png-0428e771-43a8-4f04-a5aa-0b6ededd12e7" 
+                 alt="Cute coffee icon for support" 
+                 class="w-28 h-28 mb-4 rounded-xl shadow-xl p-2"
+                 style="object-fit: cover;"> 
 
-        <!-- Buy Me a Coffee section with the provided script -->
-        <div class="flex flex-col items-center justify-center p-8 bg-gray-900 rounded-3xl shadow-lg mt-12">
-            <h2 class="text-3xl font-bold text-white mb-4">Support My Work</h2>
-            <p class="text-center text-gray-400 mb-6 max-w-xl">
-                If you find my journey inspiring or my projects helpful, consider supporting my work. Every cup of coffee helps fuel the next great idea!
+            <!-- UPDATED: Cuter Font for Header and Simplified Text -->
+            <h2 class="text-4xl font-cute text-coffee-primary mb-4 text-center leading-relaxed">
+                Fuel My FinTech Projects!
+            </h2>
+            <p class="text-center text-gray-400 mb-8 max-w-xl">
+                If you enjoy my journey and the projects I share, consider supporting my work. Every cup of coffee helps **power the research** and keeps me coding late into the night!
             </p>
-            <!-- The Buy Me a Coffee button script -->
-            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="missbuttercickenn" data-color="#FFDD00" data-emoji="" data-font="Lato" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+            
+            <!-- UPDATED: CTA Button Styled to match the requested image look (handwritten text, yellow background, dark text) -->
+            <button id="coffee-button" 
+                    class="w-full sm:w-80 md:w-96 px-10 py-3 
+                           bg-coffee-primary text-coffee-text text-2xl 
+                           rounded-full shadow-2xl 
+                           flex items-center justify-center 
+                           transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl 
+                           border-2 border-coffee-text focus:outline-none focus:ring-4 focus:ring-coffee-primary/50
+                           font-cute"> <!-- Using the 'Pacifico' font here too -->
+                
+                <span>Buy Me a Coffee!</span>
+            </button>
         </div>
+
     </main>
+
+    <!-- 2. COZY MODAL CONTAINER -->
+    <div id="coffee-modal" class="modal-backdrop fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] opacity-0" aria-modal="true" role="dialog" style="display: none;">
+        
+        <!-- Modal Content Card - Using white for maximum readability on the modal -->
+        <div class="modal-content relative bg-white max-w-sm w-11/12 p-8 lg:p-10 rounded-3xl shadow-2xl border-4 border-coffee-primary transform scale-95 opacity-0">
+            
+            <!-- Close Button -->
+            <button id="close-modal-button" class="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <div class="text-center">
+                <!-- Main Icon (Heart) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 mx-auto mb-4 text-coffee-primary" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                
+                <h2 class="text-3xl font-extrabold text-coffee-text mb-2">
+                    Hey, Thanks For Stopping By!
+                </h2>
+                
+                <p class="text-lg text-gray-700 mb-6">
+                    If you love what I do, a little <span class="text-coffee-primary font-bold">fuel</span> goes a long way.
+                </p>
+
+                <!-- Buy Me A Coffee Link (Inside Modal) -->
+                <a id="buy-coffee-link" href="https://www.buymeacoffee.com/missbuttercickenn" target="_blank"
+                   class="inline-flex items-center justify-center 
+                          w-full px-6 py-3 
+                          bg-coffee-primary text-coffee-text text-xl font-bold 
+                          rounded-xl shadow-lg 
+                          hover:bg-yellow-500 hover:shadow-xl 
+                          transition-all duration-200 transform hover:scale-[1.02] 
+                          tracking-wider">
+                    <span class="mr-2">☕</span> Buy Me a Coffee!
+                </a>
+                
+                <p class="mt-4 text-sm text-gray-500">
+                    Your support helps keep the projects flowing!
+                </p>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-gray-900 text-gray-500 py-6 text-center">
         <div class="container">
@@ -200,6 +308,54 @@
             }
             slides[slideIndex-1].style.display = "block";  
         }
+
+        /* --- Custom 'Buy Me a Coffee' Widget Logic --- */
+        const button = document.getElementById('coffee-button');
+        const modal = document.getElementById('coffee-modal');
+        const closeModalButton = document.getElementById('close-modal-button');
+        const buyCoffeeLink = document.getElementById('buy-coffee-link');
+
+        // Set the link using your known slug
+        const YOUR_LINK = "https://www.buymeacoffee.com/missbuttercickenn"; 
+        buyCoffeeLink.href = YOUR_LINK;
+
+        function openModal() {
+            modal.style.display = 'flex';
+            // Use a timeout to ensure display:flex has registered before adding transition class
+            setTimeout(() => {
+                modal.classList.add('modal-open');
+            }, 10);
+        }
+
+        function closeModal() {
+            modal.classList.remove('modal-open');
+            // Wait for the transition to finish before hiding
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Open Modal Event
+        button.addEventListener('click', openModal);
+
+        // Close Modal Events
+        closeModalButton.addEventListener('click', closeModal);
+        
+        // Close when clicking outside the modal content
+        modal.addEventListener('click', (event) => {
+            // Check if the click occurred directly on the backdrop (modal element)
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close on ESC key press
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.classList.contains('modal-open')) {
+                closeModal();
+            }
+        });
+        /* --- End Widget Logic --- */
     </script>
 </body>
 </html>
