@@ -174,16 +174,10 @@
             </div>
         </div>
         
-        <!-- STATIC & CUTE 'BUY ME A COFFEE' SECTION (Image visibility improved with invert filter) -->
+        <!-- STATIC 'FUEL MY PROJECTS' SECTION - Link restored, Image removed -->
         <div class="flex flex-col items-center justify-center p-8 bg-gray-900 rounded-3xl shadow-lg mt-12 mb-12 border-4 border-coffee-primary/50 transition-shadow hover:shadow-2xl hover:shadow-coffee-primary/20">
             
-            <!-- ADDED: filter: invert(100%) to ensure visibility on light or dark elements -->
-            <img src="uploaded:images.png-0428e771-43a8-4f04-a5aa-0b6ededd12e7" 
-                 alt="Buy Me a Coffee icon" 
-                 class="w-40 h-40 mb-4 shadow-2xl p-2 bg-white rounded-lg border-2 border-coffee-primary" 
-                 style="object-fit: contain; filter: invert(100%);"> 
-
-            <!-- UPDATED: Cuter Font for Header and Simplified Text -->
+            <!-- Cuter Font for Header and Simplified Text -->
             <h2 class="text-4xl font-cute text-coffee-primary mb-4 text-center leading-relaxed">
                 Fuel My FinTech Projects!
             </h2>
@@ -191,7 +185,7 @@
                 If you enjoy my journey and the projects I share, consider supporting my work. Every cup of coffee helps **power the research** and keeps me coding late into the night!
             </p>
             
-            <!-- CTA is an Anchor Tag (A link) and links directly to the URL -->
+            <!-- Link button restored -->
             <a id="coffee-link" 
                     href="https://www.buymeacoffee.com/missbuttercickenn" 
                     target="_blank"
@@ -205,6 +199,7 @@
                 
                 <span>Buy Me a Coffee!</span>
             </a>
+            
         </div>
 
     </main>
@@ -247,13 +242,6 @@
             }
             slides[slideIndex-1].style.display = "block";  
         }
-        
-        // Ensure the Buy Me a Coffee link has the correct URL (although it's already set in the HTML)
-        const coffeeLink = document.getElementById('coffee-link');
-        if (coffeeLink) {
-            coffeeLink.href = "https://www.buymeacoffee.com/missbuttercickenn"; 
-        }
-
     </script>
 </body>
 </html>
