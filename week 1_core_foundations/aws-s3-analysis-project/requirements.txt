@@ -1,0 +1,11 @@
+* Setup: Instructions on how to run the project (e.g., "Install Python,
+     install dependencies with pip install -r requirements.txt, configure AWS CLI credentials.").
+* Key Learnings: Details on how you handled IAM permissions or specific boto3 commands.
+* Analysis Output: Display the final printed result (e.g., "The average value of X was 55.7.").
+* Simple list of packages needed: boto3, pandas, numpy (if used).
+
+
+Dependencies. Lists all necessary Python libraries.
+
+
+
