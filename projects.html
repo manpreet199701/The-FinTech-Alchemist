@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The FinTech Alchemist - Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Added Pacifico link and updated Inter for consistency -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         body {
@@ -44,6 +45,7 @@
             font-weight: 600;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+        /* Standardized active button color to match the primary link color */
         .btn-group .btn.active {
             background-color: #007bff;
             color: #fff;
@@ -55,35 +57,47 @@
             color: #007bff;
         }
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-primary': '#FFDD00',
+                        'coffee-text': '#0d111c',
+                        'coffee-accent': '#007bff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        cute: ['Pacifico', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="antialiased">
 
     <header class="py-6 border-b border-gray-800">
         <nav class="container flex justify-between items-center">
             <a href="index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
-            <div class="space-x-8 hidden md:flex">
-                <a href="blog.html" class="nav-link text-white hover:text-blue-500">Blog</a>
-                <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
-                <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
-                <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
-                <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
-                <a href="Consultaion.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
-                <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            
+            <!-- Universal Toggle Button - Now visible on ALL screens -->
+            <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </nav>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
-        <a href="blog.html" class="block py-2 text-white hover:text-blue-500">Blog</a>
-        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
-        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
-        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
-        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
-        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
-        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
+    <!-- Universal Toggle Menu - Hidden by default, absolute positioned to the top right -->
+    <div id="mobile-menu" class="hidden bg-gray-900 absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl border-b border-l border-gray-800 shadow-2xl flex flex-col items-start space-y-2">
+        <a href="blog.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Blog</a>
+        <a href="about.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">About</a>
+        <a href="projects.html" class="block py-2 text-blue-500 font-bold w-full text-left">Projects</a> <!-- Highlighted current page -->
+        <a href="phases.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Phases</a>
+        <a href="learning.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Learning</a>
+        <a href="notes.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Notes</a> <!-- Added Notes link -->
+        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Consultation</a>
+        <a href="contact.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Contact</a>
     </div>
 
     <section id="projects" class="py-16">
@@ -221,6 +235,7 @@
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
+        // Universal toggle logic
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
