@@ -49,34 +49,25 @@
     <header class="py-6 border-b border-gray-800">
         <nav class="container flex justify-between items-center">
             <a href="index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
-            <!-- Desktop Menu (Vertical Stack) -->
-            <div class="hidden md:flex flex-col space-y-1 items-end">
-                <a href="blog.html" class="nav-link text-white hover:text-blue-500">Blog</a>
-                <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
-                <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
-                <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
-                <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
-                <a href="notes.html" class="nav-link text-blue-500 font-bold">Notes</a> <!-- Highlighted current page -->
-                <a href="Consultaion.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
-                <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
-            </div>
-            <!-- Mobile Menu Toggle Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            
+            <!-- Toggle Button - Now visible on ALL screens (desktop and mobile) -->
+            <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </nav>
     </header>
 
-    <!-- Mobile Menu List - Starts hidden, toggled by JS -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
-        <a href="blog.html" class="block py-2 text-white hover:text-blue-500">Blog</a>
-        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
-        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
-        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
-        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
-        <a href="notes.html" class="block py-2 text-blue-500 font-bold">Notes</a> <!-- Highlighted current page -->
-        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
-        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
+    <!-- Universal Toggle Menu - Hidden by default, absolute positioned to the top right -->
+    <!-- This block is now the toggle menu for ALL screen sizes -->
+    <div id="mobile-menu" class="hidden bg-gray-900 absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl border-b border-l border-gray-800 shadow-2xl flex flex-col items-start space-y-2">
+        <a href="blog.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Blog</a>
+        <a href="about.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">About</a>
+        <a href="projects.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Projects</a>
+        <a href="phases.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Phases</a>
+        <a href="learning.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Learning</a>
+        <a href="notes.html" class="block py-2 text-blue-500 font-bold w-full text-left">Notes</a> <!-- Highlighted current page -->
+        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Consultation</a>
+        <a href="contact.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Contact</a>
     </div>
 
     <main class="container py-16">
@@ -116,11 +107,10 @@
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        // Toggle logic for the mobile menu
+        // Toggle logic for the universal menu
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
     </script>
 </body>
 </html>
-
