@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My FinTech Alchemist Notes</title>
+    <!-- Load Tailwind CSS CDN for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom configuration for the Inter font and base styling */
+        :root {
+            --color-primary: #3498db; /* Vibrant blue */
+            --color-secondary: #2c3e50; /* Dark blue/grey */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7; /* Light off-white background */
+        }
+        /* Custom style to replace the old list bullet for aesthetics */
+        .note-item::before {
+            content: '•';
+            color: var(--color-primary);
+            position: absolute;
+            left: 0;
+            font-size: 1.25rem;
+            line-height: 1.2;
+            top: 2px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <!-- Logo/Title -->
+            <h1 class="text-2xl font-extrabold text-[var(--color-primary)]">
+                <a href="index.html">The FinTech Alchemist</a>
+            </h1>
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="flex space-x-6 md:space-x-8 text-sm md:text-base">
+                    <li><a href="index.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">Home</a></li>
+                    <li><a href="about.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">About Me</a></li>
+                    <li><a href="portfolio.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">Portfolio</a></li>
+                    <li><a href="blog.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">Blog</a></li>
+                    <li><a href="contact.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">Contact</a></li>
+                    <li><a href="notes.html" class="text-[var(--color-primary)] font-bold border-b-2 border-[var(--color-primary)] pb-1">Notes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        <!-- Notes Container -->
+        <div class="max-w-6xl mx-auto p-4 sm:p-6 md:p-10 bg-white rounded-xl shadow-2xl mt-8 mb-12">
+            <!-- Notes Header -->
+            <div class="text-center mb-12 pb-6 border-b border-gray-100">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-[var(--color-secondary)] mb-3">
+                    My Learning & Research Notes
+                </h1>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                    A curated collection of thoughts, insights, and key takeaways from the dynamic world of FinTech, AI, and strategic development.
+                </p>
+            </div>
+
+            <!-- Notes Grid (Fully Responsive) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                <!-- FinTech Trends Category -->
+                <div class="note-category bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-xl transition duration-300 hover:shadow-2xl">
+                    <h2 class="text-2xl font-bold text-[var(--color-secondary)] mb-4 pb-2 border-b-2 border-[var(--color-primary)]">
+                        FinTech Trends
+                    </h2>
+                    <ul class="list-none p-0">
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">The Rise of Embedded Finance</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Blockchain in Supply Chain</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">AI in Fraud Detection</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Open Banking Innovations</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AI & Machine Learning Category -->
+                <div class="note-category bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-xl transition duration-300 hover:shadow-2xl">
+                    <h2 class="text-2xl font-bold text-[var(--color-secondary)] mb-4 pb-2 border-b-2 border-[var(--color-primary)]">
+                        AI & Machine Learning
+                    </h2>
+                    <ul class="list-none p-0">
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Generative AI in Finance</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Ethical AI Considerations</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Reinforcement Learning Basics</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Large Language Models (LLMs)</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Project Ideas Category -->
+                <div class="note-category bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-xl transition duration-300 hover:shadow-2xl">
+                    <h2 class="text-2xl font-bold text-[var(--color-secondary)] mb-4 pb-2 border-b-2 border-[var(--color-primary)]">
+                        Project Ideas
+                    </h2>
+                    <ul class="list-none p-0">
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Decentralized Lending Platform</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Personalized Robo-Advisor</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">AI-powered Budgeting App</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Smart Contract Audit Tool</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Reading List Category -->
+                <div class="note-category bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-xl transition duration-300 hover:shadow-2xl">
+                    <h2 class="text-2xl font-bold text-[var(--color-secondary)] mb-4 pb-2 border-b-2 border-[var(--color-primary)]">
+                        Reading List
+                    </h2>
+                    <ul class="list-none p-0">
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">"The Age of Surveillance Capitalism" Summary</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">"Flash Boys" Key Takeaways</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">"AI Superpowers" Review</a>
+                        </li>
+                        <li class="note-item relative pl-6 mb-3">
+                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">"Principles" by Ray Dalio - Notes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--color-secondary)] text-white mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center">
+            <p class="text-sm">&copy; 2023 The FinTech Alchemist. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
