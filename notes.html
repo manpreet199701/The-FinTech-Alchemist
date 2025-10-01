@@ -3,161 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My FinTech Alchemist Notes</title>
-    <!-- Load Tailwind CSS CDN for utility-first styling -->
+    <title>Notes - The FinTech Alchemist</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Added 'Pacifico' for a sweeter/cooler handwritten font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
-        /* Custom configuration for the Inter font and base styling */
-        :root {
-            --color-primary: #3498db; /* Vibrant blue */
-            --color-secondary: #2c3e50; /* Dark blue/grey */
-        }
         body {
+            /* Matched dark background and text colors from index.html */
             font-family: 'Inter', sans-serif;
-            background-color: #f7f7f7; /* Light off-white background */
+            background-color: #0d111c;
+            color: #e0e6f0; 
         }
-        /* Custom style to replace the old list bullet for aesthetics */
-        .note-item::before {
-            content: '•';
-            color: var(--color-primary);
-            position: absolute;
-            left: 0;
-            font-size: 1.25rem;
-            line-height: 1.2;
-            top: 2px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #007bff;
         }
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-primary': '#FFDD00',
+                        'coffee-text': '#0d111c',
+                        'coffee-accent': '#007bff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        cute: ['Pacifico', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="antialiased">
-    <!-- Header/Navigation Bar -->
-    <header class="bg-white shadow-lg sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <!-- Logo/Title -->
-            <h1 class="text-2xl font-extrabold text-[var(--color-primary)]">
-                <a href="index.html">The FinTech Alchemist</a>
-            </h1>
-            <!-- Navigation Links -->
-            <nav>
-                <ul class="flex space-x-6 md:space-x-8 text-sm md:text-base">
-                    <li><a href="index.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">Home</a></li>
-                    <li><a href="about.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">About Me</a></li>
-                    <li><a href="portfolio.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">Portfolio</a></li>
-                    <li><a href="blog.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">Blog</a></li>
-                    <li><a href="contact.html" class="text-gray-600 hover:text-[var(--color-primary)] transition duration-150">Contact</a></li>
-                    <li><a href="notes.html" class="text-[var(--color-primary)] font-bold border-b-2 border-[var(--color-primary)] pb-1">Notes</a></li>
-                </ul>
-            </nav>
-        </div>
+
+    <header class="py-6 border-b border-gray-800">
+        <nav class="container flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
+            <!-- Desktop Menu (Vertical Stack) -->
+            <div class="hidden md:flex flex-col space-y-1 items-end">
+                <a href="blog.html" class="nav-link text-white hover:text-blue-500">Blog</a>
+                <a href="about.html" class="nav-link text-white hover:text-blue-500">About</a>
+                <a href="projects.html" class="nav-link text-white hover:text-blue-500">Projects</a>
+                <a href="phases.html" class="nav-link text-white hover:text-blue-500">Phases</a>
+                <a href="learning.html" class="nav-link text-white hover:text-blue-500">Learning</a>
+                <a href="notes.html" class="nav-link text-blue-500 font-bold">Notes</a> <!-- Highlighted current page -->
+                <a href="Consultaion.html" class="nav-link text-white hover:text-blue-500">Consultation</a>
+                <a href="contact.html" class="nav-link text-white hover:text-blue-500">Contact</a>
+            </div>
+            <!-- Mobile Menu Toggle Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
     </header>
 
-    <main class="min-h-screen">
-        <!-- Notes Container -->
-        <div class="max-w-6xl mx-auto p-4 sm:p-6 md:p-10 bg-white rounded-xl shadow-2xl mt-8 mb-12">
-            <!-- Notes Header -->
-            <div class="text-center mb-12 pb-6 border-b border-gray-100">
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-[var(--color-secondary)] mb-3">
-                    My Learning & Research Notes
-                </h1>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
-                    A curated collection of thoughts, insights, and key takeaways from the dynamic world of FinTech, AI, and strategic development.
-                </p>
-            </div>
+    <!-- Mobile Menu List - Starts hidden, toggled by JS -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 absolute top-16 left-0 right-0 py-4 text-center">
+        <a href="blog.html" class="block py-2 text-white hover:text-blue-500">Blog</a>
+        <a href="about.html" class="block py-2 text-white hover:text-blue-500">About</a>
+        <a href="projects.html" class="block py-2 text-white hover:text-blue-500">Projects</a>
+        <a href="phases.html" class="block py-2 text-white hover:text-blue-500">Phases</a>
+        <a href="learning.html" class="block py-2 text-white hover:text-blue-500">Learning</a>
+        <a href="notes.html" class="block py-2 text-blue-500 font-bold">Notes</a> <!-- Highlighted current page -->
+        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500">Consultation</a>
+        <a href="contact.html" class="block py-2 text-white hover:text-blue-500">Contact</a>
+    </div>
 
-            <!-- Notes Grid (Fully Responsive) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-
-                <!-- FinTech Trends Category -->
-                <div class="note-category bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-xl transition duration-300 hover:shadow-2xl">
-                    <h2 class="text-2xl font-bold text-[var(--color-secondary)] mb-4 pb-2 border-b-2 border-[var(--color-primary)]">
-                        FinTech Trends
-                    </h2>
-                    <ul class="list-none p-0">
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">The Rise of Embedded Finance</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Blockchain in Supply Chain</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">AI in Fraud Detection</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Open Banking Innovations</a>
-                        </li>
-                    </ul>
+    <main class="container py-16">
+        <div class="bg-gray-800 rounded-xl p-8 shadow-lg">
+            <h1 class="text-4xl font-extrabold text-white mb-6 border-b border-gray-700 pb-4">My FinTech & AI Notes</h1>
+            <p class="text-gray-400 mb-8">
+                This is where I document key insights, technical definitions, and quick references from my learning journey.
+            </p>
+            
+            <!-- Placeholder Note Section -->
+            <div class="space-y-6">
+                <div class="bg-gray-900 p-5 rounded-lg border border-blue-500/30">
+                    <h2 class="text-xl font-semibold text-blue-400 mb-2">Note 1: Understanding LLM Tokenization</h2>
+                    <p class="text-gray-300">
+                        Tokenization is the process of breaking down text into smaller units (tokens). These tokens are the fundamental units models like Gemini use to process information. Shorter, common words often get their own token, while complex words are broken down into subwords. This affects cost and model context window usage.
+                    </p>
                 </div>
-
-                <!-- AI & Machine Learning Category -->
-                <div class="note-category bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-xl transition duration-300 hover:shadow-2xl">
-                    <h2 class="text-2xl font-bold text-[var(--color-secondary)] mb-4 pb-2 border-b-2 border-[var(--color-primary)]">
-                        AI & Machine Learning
-                    </h2>
-                    <ul class="list-none p-0">
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Generative AI in Finance</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Ethical AI Considerations</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Reinforcement Learning Basics</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Large Language Models (LLMs)</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Project Ideas Category -->
-                <div class="note-category bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-xl transition duration-300 hover:shadow-2xl">
-                    <h2 class="text-2xl font-bold text-[var(--color-secondary)] mb-4 pb-2 border-b-2 border-[var(--color-primary)]">
-                        Project Ideas
-                    </h2>
-                    <ul class="list-none p-0">
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Decentralized Lending Platform</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Personalized Robo-Advisor</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">AI-powered Budgeting App</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">Smart Contract Audit Tool</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Reading List Category -->
-                <div class="note-category bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-xl transition duration-300 hover:shadow-2xl">
-                    <h2 class="text-2xl font-bold text-[var(--color-secondary)] mb-4 pb-2 border-b-2 border-[var(--color-primary)]">
-                        Reading List
-                    </h2>
-                    <ul class="list-none p-0">
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">"The Age of Surveillance Capitalism" Summary</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">"Flash Boys" Key Takeaways</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">"AI Superpowers" Review</a>
-                        </li>
-                        <li class="note-item relative pl-6 mb-3">
-                            <a href="#" class="text-gray-700 hover:text-[var(--color-primary)] font-medium transition duration-150">"Principles" by Ray Dalio - Notes</a>
-                        </li>
-                    </ul>
+                
+                <div class="bg-gray-900 p-5 rounded-lg border border-blue-500/30">
+                    <h2 class="text-xl font-semibold text-blue-400 mb-2">Note 2: Alpha in Quant Trading</h2>
+                    <p class="text-gray-300">
+                        Alpha ($\alpha$) represents the excess return of an investment relative to the return of a benchmark index. It's often used as a measure of an investment manager's performance or the quality of a trading strategy. A positive alpha indicates the investment outperformed the market, while a negative alpha indicates underperformance.
+                    </p>
                 </div>
             </div>
+            
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-[var(--color-secondary)] text-white mt-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center">
-            <p class="text-sm">&copy; 2023 The FinTech Alchemist. All rights reserved.</p>
+    <footer class="bg-gray-900 text-gray-500 py-6 text-center mt-12">
+        <div class="container">
+            <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Toggle logic for the mobile menu
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
+
