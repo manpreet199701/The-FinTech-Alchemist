@@ -5,13 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The FinTech Alchemist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Added 'Pacifico' for a sweeter/cooler handwritten font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- LOAD CUSTOM FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- 
+    |---------------------------------------------------------------|
+    | 1. CUSTOM STYLE BLOCK: CSS Variables & Global Styles          |
+    |---------------------------------------------------------------|
+    -->
     <style>
+        :root {
+            /* Coastal Citrus Palette */
+            --color-primary-bg: #F5F7FA;      /* Background */
+            --color-text-main: #1A202C;       /* Main Text */
+            --color-accent-cta: #00ADB5;      /* Teal Accent */
+            --color-accent-link: #FF577F;     /* Coral Accent */
+            --color-card-bg: #FFFFFF;         /* Card Background */
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d111c;
-            color: #e0e6f0;
+            /* Primary Font: Montserrat (Set here for global standard CSS rules) */
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--color-primary-bg);
+            color: var(--color-text-main);
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 1200px;
@@ -20,10 +38,13 @@
         }
         .nav-link {
             transition: all 0.3s ease;
+            color: var(--color-text-main);
         }
         .nav-link:hover {
-            color: #007bff;
+            color: var(--color-accent-link); /* Lively Coral on hover */
         }
+        
+        /* Slideshow custom styles */
         .slideshow-container {
             position: relative;
             max-width: 1000px;
@@ -41,13 +62,13 @@
             object-fit: cover;
         }
         .slideshow-text {
-            color: #f2f2f2;
+            color: white; 
             padding: 8px 12px;
             position: absolute;
             bottom: 0;
             width: 100%;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(26, 32, 44, 0.8);
         }
         .prev, .next {
             cursor: pointer;
@@ -62,31 +83,39 @@
             transition: 0.6s ease;
             border-radius: 0 3px 3px 0;
             user-select: none;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(26, 32, 44, 0.5);
         }
         .next {
             right: 0;
             border-radius: 3px 0 0 3px;
         }
         .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: var(--color-accent-cta); /* Bright Teal on hover */
         }
         
-        /* Removed modal specific styles as the main button now links directly */
-
     </style>
+    
+    <!-- 
+    |---------------------------------------------------------------|
+    | 2. TAILWIND CONFIGURATION BLOCK: Classes for HTML             |
+    |---------------------------------------------------------------|
+    -->
     <script>
+        // This is the essential configuration for the Tailwind CSS framework.
         tailwind.config = {
             theme: {
                 extend: {
+                    // Map your custom colors so you can use classes like 'bg-accent-cta'
                     colors: {
-                        'coffee-primary': '#FFDD00', /* Bright yellow for CTA visibility */
-                        'coffee-text': '#0d111c', /* Text to match the dark theme body background */
-                        'coffee-accent': '#007bff', /* Use your primary accent blue */
+                        'primary-bg': '#F5F7FA', 
+                        'text-main': '#1A202C',
+                        'accent-cta': '#00ADB5',  /* Bright Teal */
+                        'accent-link': '#FF577F', /* Lively Coral */
                     },
+                    // Map your custom fonts so you can use classes like 'font-sans'
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        cute: ['Pacifico', 'cursive'], // Added cute font
+                        sans: ['Montserrat', 'sans-serif'],
+                        cute: ['Pacifico', 'cursive'],
                     }
                 }
             }
@@ -95,68 +124,75 @@
 </head>
 <body class="antialiased">
 
-    <header class="py-6 border-b border-gray-800">
+    <header class="py-6 border-b border-gray-200 bg-white shadow-sm">
         <nav class="container flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
+            <!-- Title now uses the Bright Teal accent color -->
+            <a href="index.html" class="text-3xl font-bold text-accent-cta">The FinTech Alchemist</a>
             
-            <!-- Toggle Button - Now visible on ALL screens (desktop and mobile) -->
-            <button id="mobile-menu-button" class="text-white focus:outline-none">
+            <!-- Toggle Button now uses the main text color -->
+            <button id="mobile-menu-button" class="text-text-main focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </nav>
     </header>
 
-    <!-- Universal Toggle Menu - Hidden by default, absolute positioned to the top right -->
-    <div id="mobile-menu" class="hidden bg-gray-900 absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl border-b border-l border-gray-800 shadow-2xl flex flex-col items-start space-y-2">
-        <a href="blog.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Blog</a>
-        <a href="about.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">About</a>
-        <a href="projects.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Projects</a>
-        <a href="phases.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Phases</a>
-        <a href="learning.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Learning</a>
-        <a href="notes.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Notes</a>
-        <a href="Consultaion.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Consultation</a>
-        <a href="contact.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Contact</a>
+    <!-- Universal Toggle Menu - Now using white background and dark text -->
+    <div id="mobile-menu" class="hidden bg-white absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl border-b border-l border-gray-200 shadow-xl flex flex-col items-start space-y-2">
+        <!-- Links now use dark text and Lively Coral on hover -->
+        <a href="blog.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Blog</a>
+        <a href="about.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">About</a>
+        <a href="projects.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Projects</a>
+        <a href="phases.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Phases</a>
+        <a href="learning.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Learning</a>
+        <a href="notes.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Notes</a>
+        <a href="Consultaion.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Consultation</a>
+        <a href="contact.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Contact</a>
     </div>
 
     <main class="container py-16">
         <!-- Main content for the homepage -->
         <div class="text-center mb-12">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">The FinTech Alchemist</h1>
-            <p class="text-lg sm:text-xl text-gray-400">Transforming finance with technology. Follow my 3-month journey into the world of AI.</p>
+            <!-- H1 now uses the Bright Teal accent color -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-accent-cta leading-tight mb-4">The FinTech Alchemist</h1>
+            <!-- Body text is now Deep Charcoal -->
+            <p class="text-lg sm:text-xl text-text-main/80">Transforming finance with technology. Follow my 3-month journey into the world of AI.</p>
         </div>
 
-        <!-- Latest Blog Post Section -->
-        <div class="bg-gray-800 rounded-xl p-8 mb-12 shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Latest Blog Post</h2>
-            <a href="blog/blog1.html" target="_blank" rel="noopener noreferrer" class="text-xl text-blue-400 hover:underline">
+        <!-- Latest Blog Post Section - Card background is now white -->
+        <div class="bg-card-bg rounded-xl p-8 mb-12 shadow-lg border border-gray-200">
+            <!-- Heading is Bright Teal -->
+            <h2 class="text-2xl font-bold mb-4 text-accent-cta">Latest Blog Post</h2>
+            <!-- Link is Lively Coral -->
+            <a href="blog/blog1.html" target="_blank" rel="noopener noreferrer" class="text-xl text-accent-link hover:text-accent-cta hover:underline">
                 The FinTech Alchemist - My 3-Month Journey
             </a>
-            <p class="text-gray-400 mt-2">
+            <p class="text-text-main/80 mt-2">
                 Documenting my intensive 3-month plan to become a FinTech Alchemist...
             </p>
         </div>
 
-        <!-- Latest Projects Slideshow -->
-        <div class="bg-gray-800 rounded-xl p-8 mb-12 shadow-lg">
-            <h2 class="text-2xl font-bold mb-4 text-center">Featured Projects</h2>
+        <!-- Latest Projects Slideshow - Card background is now white -->
+        <div class="bg-card-bg rounded-xl p-8 mb-12 shadow-lg border border-gray-200">
+            <!-- Heading is Bright Teal -->
+            <h2 class="text-2xl font-bold mb-4 text-center text-accent-cta">Featured Projects</h2>
             <div class="slideshow-container mt-6">
                 <!-- Slides will be added here -->
                 <div class="slideshow-slide fade">
-                    <img src="https://placehold.co/1000x500/2f4f4f/ffffff?text=Project+1+-+Trading+Bot" alt="Placeholder for a trading bot project">
+                    <img src="https://placehold.co/1000x500/00ADB5/ffffff?text=Project+1+-+Trading+Bot" alt="Placeholder for a trading bot project">
                     <div class="slideshow-text">
                         <h3 class="text-xl font-bold">Project 1: Algorithmic Trading Bot</h3>
                         <p class="text-sm">A Python-based bot that uses historical data to make automated trading decisions.</p>
                     </div>
                 </div>
                 <div class="slideshow-slide fade">
-                    <img src="https://placehold.co/1000x500/4682b4/ffffff?text=Project+2+-+Risk+Analysis" alt="Placeholder for a risk analysis project">
+                    <img src="https://placehold.co/1000x500/FF577F/ffffff?text=Project+2+-+Risk+Analysis" alt="Placeholder for a risk analysis project">
                     <div class="slideshow-text">
                         <h3 class="text-xl font-bold">Project 2: AI-Powered Risk Analysis</h3>
                         <p class="text-sm">A machine learning model that predicts loan default risk for financial institutions.</p>
                     </div>
                 </div>
                 <div class="slideshow-slide fade">
-                    <img src="https://placehold.co/1000x500/808000/ffffff?text=Project+3+-+Sentiment+Analysis" alt="Placeholder for a sentiment analysis project">
+                    <img src="https://placehold.co/1000x500/00ADB5/1A202C?text=Project+3+-+Sentiment+Analysis" alt="Placeholder for a sentiment analysis project">
                     <div class="slideshow-text">
                         <h3 class="text-xl font-bold">Project 3: Financial News Sentiment Tracker</h3>
                         <p class="text-sm">An application that analyzes news headlines to gauge market sentiment in real-time.</p>
@@ -169,27 +205,27 @@
             </div>
         </div>
         
-        <!-- STATIC 'FUEL MY PROJECTS' SECTION - Link restored, Image removed -->
-        <div class="flex flex-col items-center justify-center p-8 bg-gray-900 rounded-3xl shadow-lg mt-12 mb-12 border-4 border-coffee-primary/50 transition-shadow hover:shadow-2xl hover:shadow-coffee-primary/20">
+        <!-- STATIC 'FUEL MY PROJECTS' SECTION - Now using bright colors -->
+        <div class="flex flex-col items-center justify-center p-8 bg-card-bg rounded-3xl shadow-lg mt-12 mb-12 border-4 border-accent-link/50 transition-shadow hover:shadow-2xl hover:shadow-accent-link/20">
             
-            <!-- Cuter Font for Header and Simplified Text -->
-            <h2 class="text-4xl font-cute text-coffee-primary mb-4 text-center leading-relaxed">
+            <!-- H2 uses Lively Coral for a fun, striking contrast -->
+            <h2 class="text-4xl font-cute text-accent-link mb-4 text-center leading-relaxed">
                 Fuel My FinTech Projects!
             </h2>
-            <p class="text-center text-gray-400 mb-8 max-w-xl">
+            <p class="text-center text-text-main/80 mb-8 max-w-xl">
                 If you enjoy my journey and the projects I share, consider supporting my work. Every cup of coffee helps **power the research** and keeps me coding late into the night!
             </p>
             
-            <!-- Link button restored -->
+            <!-- CTA button: Bright Teal background, White text, Coral border/focus ring -->
             <a id="coffee-link" 
                     href="https://www.buymeacoffee.com/missbuttercickenn" 
                     target="_blank"
                     class="w-full sm:w-80 md:w-96 px-10 py-3 text-center
-                           bg-coffee-primary text-coffee-text text-2xl no-underline
+                           bg-accent-cta text-white text-2xl no-underline
                            rounded-full shadow-2xl 
                            flex items-center justify-center 
                            transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl 
-                           border-2 border-coffee-text focus:outline-none focus:ring-4 focus:ring-coffee-primary/50
+                           border-2 border-accent-link focus:outline-none focus:ring-4 focus:ring-accent-cta/50
                            font-cute"> 
                 
                 <span>Buy Me a Coffee!</span>
@@ -199,9 +235,7 @@
 
     </main>
 
-    <!-- Removed the unused modal div and its associated scripts -->
-
-    <footer class="bg-gray-900 text-gray-500 py-6 text-center">
+    <footer class="bg-white text-text-main/70 py-6 text-center border-t border-gray-200">
         <div class="container">
             <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
         </div>
