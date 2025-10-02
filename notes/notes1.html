@@ -4,79 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note Chapter - Introduction to Python</title>
+    
+    <!-- ESSENTIAL: This script loads the entire Tailwind CSS framework -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- LOAD CUSTOM FONTS: Varela Round (Primary), Pacifico (Accent) -->
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- 
+    |---------------------------------------------------------------|
+    | 1. CUSTOM STYLE BLOCK: CSS Variables & Global Styles          |
+    |---------------------------------------------------------------|
+    -->
     <style>
+        :root {
+            /* Sweet Cartoon Palette */
+            --color-primary-bg: #FFFFFF;      /* Pure White Background */
+            --color-text-main: #3A4750;       /* Soft Charcoal Text */
+            --color-accent-cta: #FFB3C6;      /* Soft Pink Accent (Hover/Borders) */
+            --color-accent-link: #06D6A0;     /* Vibrant Mint Green (Links/Active) */
+            --color-card-bg: #FFFFFF;         /* Pure White Card */
+            --color-accent-teal: #00ADB5;     /* Bright Teal (Headlines) */
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d111c;
-            color: #e0e6f0;
+            /* Primary Font: Varela Round */
+            font-family: 'Varela Round', sans-serif;
+            background-color: var(--color-primary-bg);
+            color: var(--color-text-main);
+            
+            /* --- PATTERN (Soft polka dots) --- */
+            background-image: radial-gradient(var(--color-accent-link) 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            opacity: 0.95; 
         }
         .container {
-            max-width: 1000px; /* Slightly narrower for a book-page feel */
+            max-width: 1000px;
             margin: 0 auto;
             padding: 1.5rem;
         }
+
+        /* Header Styles */
         .note-header {
-            border-bottom: 2px solid #2d3748; /* Slightly lighter line */
+            border-bottom: 2px solid #E5E7EB; /* Light grey line */
             padding-bottom: 1rem;
             margin-bottom: 3rem;
         }
         .chapter-number {
             font-size: 1.5rem;
-            font-weight: 600;
-            color: #FFDD00;
+            font-weight: 700;
+            color: var(--color-accent-link); /* Mint Green */
             margin-bottom: 0.5rem;
         }
         .note-title {
             font-size: 3rem;
             font-weight: 800;
-            color: #fff;
+            color: var(--color-accent-teal); /* Bright Teal */
             line-height: 1.1;
         }
+
+        /* Content Card Styles */
         .content-section {
-            background-color: #1a202c; /* Background for the main text block */
+            background-color: var(--color-card-bg); /* White */
             padding: 3rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             line-height: 1.7;
+            border: 4px solid var(--color-accent-cta); /* Soft Pink Border */
         }
+
+        /* Main Section Heading */
         .section-heading-main {
             font-size: 2rem;
             font-weight: 700;
-            color: #007bff;
-            border-left: 4px solid #007bff;
-            padding-left: 1rem;
-            margin-top: 2rem;
+            color: var(--color-accent-teal); /* Bright Teal */
+            border-left: 6px solid var(--color-accent-cta); /* Soft Pink */
+            padding-left: 1.25rem;
+            margin-top: 2.5rem;
             margin-bottom: 1.5rem;
         }
+
+        /* Sub Section Heading */
         .section-heading-sub {
             font-size: 1.5rem;
-            font-weight: 600;
-            color: #FFDD00;
-            margin-top: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent-link); /* Mint Green */
+            margin-top: 2rem;
             margin-bottom: 1rem;
         }
-        /* Style for blockquotes to mimic academic citations/key takeaways */
+
+        /* Blockquote Style (Key Takeaways/Citations) */
         blockquote {
-            border-left: 4px solid #FFDD00;
-            padding-left: 1.5rem;
-            margin: 1.5rem 0;
+            border-left: 6px solid var(--color-accent-cta); /* Soft Pink */
+            background-color: #F8F8F8; /* Very light background for distinction */
+            padding: 1.5rem;
+            margin: 2rem 0;
             font-style: italic;
-            color: #909bb5;
+            color: var(--color-text-main);
+            border-radius: 0.5rem;
+        }
+        
+        /* List/Text Styles */
+        .content-section p, .content-section ul, .content-section ol {
+             color: var(--color-text-main);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+            color: var(--color-text-main); 
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: var(--color-accent-link); /* Mint Green on hover */
+        }
+        #mobile-menu {
+            background-color: var(--color-card-bg);
+            border-bottom: 1px solid #E5E7EB;
+            border-left: 1px solid #E5E7EB;
+        }
+        #mobile-menu a {
+             color: var(--color-text-main);
         }
     </style>
+    
+    <!-- 
+    |---------------------------------------------------------------|
+    | 2. TAILWIND CONFIGURATION BLOCK: Classes for HTML             |
+    |---------------------------------------------------------------|
+    -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'coffee-primary': '#FFDD00',
-                        'coffee-text': '#0d111c',
-                        'coffee-accent': '#007bff',
+                        'primary-bg': '#FFFFFF',
+                        'text-main': '#3A4750',
+                        'accent-cta': '#FFB3C6',      /* Soft Pink Accent */
+                        'accent-link': '#06D6A0',     /* Vibrant Mint Green */
+                        'accent-teal': '#00ADB5',     /* Bright Teal */
+                        'card-bg': '#FFFFFF',         /* Pure White Card */
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Varela Round', 'sans-serif'],
                         cute: ['Pacifico', 'cursive'],
                     }
                 }
@@ -86,27 +155,41 @@
 </head>
 <body class="antialiased">
 
-    <header class="py-6 border-b border-gray-800">
+    <!-- Header matching the theme -->
+    <header class="py-6 border-b border-gray-200 bg-primary-bg shadow-sm">
         <nav class="container flex justify-between items-center">
-            <a href="../index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
+            <!-- Note: Adjusted relative path to reach the root index.html -->
+            <a href="../index.html" class="text-3xl font-bold text-text-main">The FinTech Alchemist</a>
             
-            <!-- Universal Toggle Button -->
-            <button id="mobile-menu-button" class="text-white focus:outline-none">
+            <!-- Desktop Navigation (Re-added for consistency) -->
+            <div class="space-x-8 hidden md:flex">
+                <a href="../blog.html" class="nav-link">Blog</a>
+                <a href="../about.html" class="nav-link">About me</a>
+                <a href="../projects.html" class="nav-link">Projects</a>
+                <a href="../phases.html" class="nav-link">Phases</a> 
+                <a href="../learning.html" class="nav-link">Learning</a>
+                <a href="../notes.html" class="nav-link text-accent-link font-bold">Notes</a> <!-- Highlighted current section -->
+                <a href="../Consultation.html" class="nav-link">Consultation</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <!-- Mobile Toggle Button -->
+            <button id="mobile-menu-button" class="text-text-main focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </nav>
     </header>
 
-    <!-- Universal Toggle Menu -->
-    <div id="mobile-menu" class="hidden bg-gray-900 absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl border-b border-l border-gray-800 shadow-2xl flex flex-col items-start space-y-2">
-        <a href="../blog.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Blog</a>
-        <a href="../about.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">About</a>
-        <a href="../projects.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Projects</a>
-        <a href="../phases.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Phases</a>
-        <a href="../learning.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Learning</a>
-        <a href="../notes.html" class="block py-2 text-blue-500 font-bold w-full text-left">Notes</a> <!-- Highlighted -->
-        <a href="../Consultaion.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Consultation</a>
-        <a href="../contact.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Contact</a>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl border-b border-l border-gray-200 shadow-xl flex flex-col items-start space-y-2">
+        <a href="../blog.html" class="nav-link block py-2 w-full text-left">Blog</a>
+        <a href="../about.html" class="nav-link block py-2 w-full text-left">About me</a>
+        <a href="../projects.html" class="nav-link block py-2 w-full text-left">Projects</a>
+        <a href="../phases.html" class="nav-link block py-2 w-full text-left">Phases</a>
+        <a href="../learning.html" class="nav-link block py-2 w-full text-left">Learning</a>
+        <a href="../notes.html" class="nav-link block py-2 text-accent-link font-bold w-full text-left">Notes</a>
+        <a href="../Consultation.html" class="nav-link block py-2 w-full text-left">Consultation</a>
+        <a href="../contact.html" class="nav-link block py-2 w-full text-left">Contact</a>
     </div>
 
     <section class="py-12">
@@ -115,7 +198,7 @@
             <header class="note-header text-center">
                 <p class="chapter-number">Chapter 1</p>
                 <h1 class="note-title">Introduction to Python</h1>
-                <p class="text-gray-400 mt-4 text-xl italic max-w-2xl mx-auto">
+                <p class="text-text-main/70 mt-4 text-xl italic max-w-2xl mx-auto">
                     Comprehensive overview of Python programming for data science, covering syntax, libraries (Pandas, NumPy), and Jupyter notebooks.
                 </p>
             </header>
@@ -124,104 +207,105 @@
 
                 <!-- 1. Introduction -->
                 <h2 class="section-heading-main">1. Introduction to the Core Concept</h2>
-                <p class="mb-4 text-gray-300">
-                     Python  is the foundation for modern data science, used by over 75% of data professionals (2019 Kaggle & 
+                <p class="mb-4">
+                     Python is the foundation for modern data science, used by over 75% of data professionals (2019 Kaggle & 
                      Glassdoor surveys). Its clear, readable syntax simplifies learning for beginners and enables experienced 
                      developers to write concise code for complex tasks like automation and web scraping. Major companies like  
-                     Google ,  NASA ,  IBM , and  Amazon  rely on it, making it essential across data science, AI/ML, and web 
+                     Google, NASA, IBM, and Amazon rely on it, making it essential across data science, AI/ML, and web 
                      development.
                 </p>
-                <p class="mb-4 text-gray-300">
-                     Jupyter  is a free, open-source  web application  designed for creating and sharing  interactive documents
-                    called notebooks. It seamlessly combines  code ,  visualizations ,  equations ,  narrative text , and 
+                <p class="mb-4">
+                     Jupyter is a free, open-source web application designed for creating and sharing interactive documents
+                    called notebooks. It seamlessly combines code, visualizations, equations, narrative text, and 
                     multimedia in one place. While it supports over 40 programming languages via its kernel system, it excels when 
-                    paired with  Python , creating a unified, powerful data science environment.
+                    paired with Python, creating a unified, powerful data science environment.
                 </p>
-                <p class="mb-4 text-gray-300">
-                     Necessary Prerequisite Knowledge:  Basic coding logic, data structure concepts.
+                <p class="mb-4 font-semibold text-accent-teal">
+                     Necessary Prerequisite Knowledge: Basic coding logic, data structure concepts.
                 </p>
 
                 <!-- 2. Technical Deep Dive -->
                 <h2 class="section-heading-main">2. Technical Mechanics and Implementation</h2>
                 <h3 class="section-heading-sub">2.1. Python's Powerful Library Ecosystem</h3>
-                <p class="mb-4 text-gray-300">
+                <p class="mb-4">
                     Python's primary benefit is its vast ecosystem of libraries that streamline complex data tasks. 
-                    Its  readable syntax  is easy for beginners, while its library support is robust for experts:
+                    Its readable syntax is easy for beginners, while its library support is robust for experts:
                 </p>
-                <ul class="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                    <li> Data Science:  <strong class="text-yellow-500">Pandas</strong> (data manipulation), <strong class="text-yellow-500">NumPy</strong> (numerical computing), <strong class="text-yellow-500">Matplotlib/Seaborn</strong> (visualization).</li>
-                    <li> AI/ML:  <strong class="text-yellow-500">TensorFlow</strong>, <strong class="text-yellow-500">PyTorch</strong>, <strong class="text-yellow-500">Scikit-learn</strong>.</li>
-                    <li> NLP:  Natural Language Toolkit (<strong class="text-yellow-500">NLTK</strong>).</li>
-                    <li> General:  <strong class="text-yellow-500">SciPy</strong> (scientific computing), <strong class="text-yellow-500">Flask/Django</strong> (web development).</li>
+                <ul class="list-disc list-inside space-y-1 ml-4">
+                    <li> Data Science: <strong class="text-accent-link">Pandas</strong> (data manipulation), <strong class="text-accent-link">NumPy</strong> (numerical computing), <strong class="text-accent-link">Matplotlib/Seaborn</strong> (visualization).</li>
+                    <li> AI/ML: <strong class="text-accent-link">TensorFlow</strong>, <strong class="text-accent-link">PyTorch</strong>, <strong class="text-accent-link">Scikit-learn</strong>.</li>
+                    <li> NLP: Natural Language Toolkit (<strong class="text-accent-link">NLTK</strong>).</li>
+                    <li> General: <strong class="text-accent-link">SciPy</strong> (scientific computing), <strong class="text-accent-link">Flask/Django</strong> (web development).</li>
                 </ul>
 
 
                 <h3 class="section-heading-sub">2.2. Jupyter Interactive Workflow</h3>
-                <p class="mb-4 text-gray-300">
-                    Jupyter enables  interactive computing , allowing users to run code cell-by-cell for immediate feedback, which is essential for iterative data exploration and experimentation.
+                <p class="mb-4">
+                    Jupyter enables interactive computing, allowing users to run code cell-by-cell for immediate feedback, which is essential for iterative data exploration and experimentation.
                 </p>
-                <ol class="list-decimal list-inside text-gray-300 space-y-2 ml-4">
-                    <li> Installation:  Use  Anaconda  (recommended for beginners) or install via `pip`.</li>
-                    <li> Launching Jupyter:  Run `jupyter notebook` in the terminal to start the local server.</li>
-                    <li> Basic Workflow:  Create cells for  code  (Python) or  text  (Markdown). Use  Shift + Enter  to execute cells and view output immediately.</li>
-                    <li> Rich Media Integration:  Embed  interactive plots , images, videos, and tables directly into the document.</li>
+                <ol class="list-decimal list-inside space-y-2 ml-4">
+                    <li> Installation: Use **Anaconda** (recommended for beginners) or install via `pip`.</li>
+                    <li> Launching Jupyter: Run `jupyter notebook` in the terminal to start the local server.</li>
+                    <li> Basic Workflow: Create cells for **code** (Python) or **text** (Markdown). Use **Shift + Enter** to execute cells and view output immediately.</li>
+                    <li> Rich Media Integration: Embed interactive plots, images, videos, and tables directly into the document.</li>
                 </ol>
 
                 <!-- 3. Synthesis and Cross-Disciplinary Applications -->
                 <h2 class="section-heading-main">3. Synthesis and Cross-Disciplinary Applications</h2>
                 <h3 class="section-heading-sub">3.1. Financial and Industry Applications</h3>
-                <p class="mb-4 text-gray-300">
-                    The combination of Python and Jupyter creates a powerful,  unified workflow  that spans most data-intensive industries, including finance. This environment allows for the entire data pipeline—from cleaning to modeling to reporting—to be contained in a single, reproducible document.
+                <p class="mb-4">
+                    The combination of Python and Jupyter creates a powerful, unified workflow that spans most data-intensive industries, including finance. This environment allows for the entire data pipeline—from cleaning to modeling to reporting—to be contained in a single, reproducible document.
                 </p>
                 
                 <h3 class="section-heading-sub">3.2. Community and Inclusion Parallels</h3>
-                <p class="mb-4 text-gray-300">
+                <p class="mb-4">
                     The health of the Python ecosystem is bolstered by its global community and focus on inclusion:
                 </p>
-                <blockquote class="text-gray-400">
-                     Diversity & Inclusion:  The  Python Software Foundation (PSF)  enforces a  Code of Conduct  to ensure safe, inclusive spaces. Groups like  PyLadies  provide mentorship for underrepresented genders, making Python a leader in promoting diversity in the tech industry. This emphasis on an open, supportive community mirrors the collaborative necessity in high-stakes fields like FinTech.
+                <blockquote>
+                     Diversity & Inclusion: The Python Software Foundation (PSF) enforces a Code of Conduct to ensure safe, inclusive spaces. Groups like PyLadies provide mentorship for underrepresented genders, making Python a leader in promoting diversity in the tech industry. This emphasis on an open, supportive community mirrors the collaborative necessity in high-stakes fields like FinTech.
                 </blockquote>
 
                 <!-- 4. Future Outlook and Open Questions -->
                 <h2 class="section-heading-main">4. Future Outlook and Unresolved Issues</h2>
-                <p class="mb-4 text-gray-300">
+                <p class="mb-4">
                     The ecosystem continues to evolve toward greater collaboration and accessibility. Future work focuses on enhancing performance for large-scale, real-time financial data processing and improving cloud integration.
                 </p>
-                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                    <li> Research Gap:  Optimizing deep learning library performance and integration for large-scale, real-time financial data processing.</li>
-                    <li> Collaboration & Scalability:  Utilizing tools like  JupyterLab  (next-gen interface) and  Google Colab  (cloud-based notebooks with free GPU access) for enhanced features and accessibility.</li>
-                    <li> Project Brainstorm:  A notebook-based  Automated Portfolio Risk Assessment Tool  that allows users to swap out ML models (Scikit-learn) and visualize backtesting results (Matplotlib/Seaborn) interactively.</li>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li> Research Gap: Optimizing deep learning library performance and integration for large-scale, real-time financial data processing.</li>
+                    <li> Collaboration & Scalability: Utilizing tools like **JupyterLab** (next-gen interface) and **Google Colab** (cloud-based notebooks with free GPU access) for enhanced features and accessibility.</li>
+                    <li> Project Brainstorm: A notebook-based **Automated Portfolio Risk Assessment Tool** that allows users to swap out ML models (Scikit-learn) and visualize backtesting results (Matplotlib/Seaborn) interactively.</li>
                 </ul>
 
                 <!-- 5. Conclusion and References -->
                 <h2 class="section-heading-main">5. Chapter Conclusion and Further Study</h2>
-                <p class="mb-4 text-gray-300 italic">
+                <p class="mb-4 italic">
                     The combination of Python's simplicity and rich library ecosystem with Jupyter's interactive and collaborative framework makes them the default standard for finance professionals working in data science, AI/ML, and automation.
                 </p>
 
                 <h3 class="section-heading-sub">Key Takeaways</h3>
-                <ul class="list-disc list-inside text-gray-300 space-y-1 ml-4 text-sm">
-                    <li> Popularity:  Python is the most used language in data science (75%+ job postings require it).</li>
-                    <li> Simplicity:  Python is beginner-friendly; Jupyter provides an intuitive, cell-by-cell execution model.</li>
-                    <li> Integration:  The ecosystem supports end-to-end workflows (Pandas, Scikit-learn, Matplotlib) within a single notebook document.</li>
-                    <li> Collaboration:  Notebooks enhance teamwork and reproducibility through formats like HTML/PDF and Git/GitHub integration.</li>
+                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                    <li> **Popularity:** Python is the most used language in data science (75%+ job postings require it).</li>
+                    <li> **Simplicity:** Python is beginner-friendly; Jupyter provides an intuitive, cell-by-cell execution model.</li>
+                    <li> **Integration:** The ecosystem supports end-to-end workflows (Pandas, Scikit-learn, Matplotlib) within a single notebook document.</li>
+                    <li> **Collaboration:** Notebooks enhance teamwork and reproducibility through formats like HTML/PDF and Git/GitHub integration.</li>
                 </ul>
 
                 <h3 class="section-heading-sub">Study Tip & Resources</h3>
-                <p class="mb-4 text-gray-300 text-sm">
-                    Focus on mastering Python’s core data science libraries (Pandas for manipulation is crucial) and practice small projects (data analysis, automation scripts). Explore communities like  PyLadies  for mentorship.
+                <p class="mb-4 text-sm">
+                    Focus on mastering Python’s core data science libraries (**Pandas** for manipulation is crucial) and practice small projects (data analysis, automation scripts). Explore communities like **PyLadies** for mentorship.
                 </p>
-                <ul class="list-disc list-inside text-gray-300 space-y-1 ml-4 text-sm">
-                    <li> Resource 1:  Official Python Documentation - For syntax and core language details.</li>
-                    <li> Resource 2:  Pandas/NumPy Documentation - For data manipulation and numerical computing fundamentals.</li>
-                    <li> Resource 3:  JupyterLab/Jupyter Notebook Documentation - For optimizing workflow and feature usage.</li>
+                <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                    <li> Resource 1: Official Python Documentation - For syntax and core language details.</li>
+                    <li> Resource 2: Pandas/NumPy Documentation - For data manipulation and numerical computing fundamentals.</li>
+                    <li> Resource 3: JupyterLab/Jupyter Notebook Documentation - For optimizing workflow and feature usage.</li>
                 </ul>
             </div>
             
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-500 py-6 text-center">
+    <!-- Footer now matches the bright theme -->
+    <footer class="bg-card-bg text-text-main/70 py-6 text-center border-t border-gray-200 mt-12">
         <div class="container">
             <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
         </div>
