@@ -4,15 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The FinTech Alchemist - Consultation</title>
+    
+    <!-- ESSENTIAL: This script loads the entire Tailwind CSS framework -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Added Pacifico link and updated Inter for consistency -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- LOAD CUSTOM FONTS: Varela Round (New friendly font), Pacifico for accent -->
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- 
+    |---------------------------------------------------------------|
+    | 1. CUSTOM STYLE BLOCK: CSS Variables & Global Styles          |
+    |---------------------------------------------------------------|
+    -->
     <style>
+        :root {
+            /* Sweet Cartoon Palette */
+            --color-primary-bg: #FFFFFF;      /* Pure White Background */
+            --color-text-main: #3A4750;       /* Soft Charcoal Text */
+            --color-accent-cta: #FFB3C6;      /* Soft Pink Accent */
+            --color-accent-link: #06D6A0;     /* Vibrant Mint Green Link/Hover */
+            --color-card-bg: #FFFFFF;         /* Pure White Card */
+            --color-accent-teal: #00ADB5;     /* Bright Teal Accent */
+        }
+
         body {
-            /* Changed to dark theme colors */
-            font-family: 'Inter', sans-serif;
-            background-color: #0d111c;
-            color: #e0e6f0;
+            /* Primary Font: Varela Round */
+            font-family: 'Varela Round', sans-serif;
+            background-color: var(--color-primary-bg);
+            color: var(--color-text-main);
+            transition: background-color 0.3s, color 0.3s;
+            
+            /* --- PATTERN (Soft polka dots) --- */
+            background-image: radial-gradient(var(--color-accent-link) 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            opacity: 0.95; 
         }
         .container {
             max-width: 1200px;
@@ -22,41 +47,63 @@
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #fff; /* Updated text color */
+            color: var(--color-accent-teal); /* Bright Teal */
             margin-bottom: 2rem;
             text-align: center;
             position: relative;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.75rem; /* Increased padding for the pink line */
         }
+        /* Custom styled underline using Soft Pink (accent-cta) */
         .section-title::after {
             content: '';
             position: absolute;
             left: 50%;
             bottom: 0;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: #007bff; /* Accent color */
-            border-radius: 2px;
+            width: 100px; /* Slightly wider underline */
+            height: 6px; /* Slightly thicker underline */
+            background-color: var(--color-accent-cta); /* Soft Pink Accent */
+            border-radius: 9999px; /* Fully rounded line */
         }
         .nav-link {
             transition: color 0.3s ease;
+            color: var(--color-text-main); /* Soft Charcoal */
+            font-weight: 600;
         }
         .nav-link:hover {
-            color: #007bff;
+            color: var(--color-accent-link); /* Mint Green on hover */
+        }
+
+        /* Menu specific styles for bright theme */
+        #mobile-menu {
+            background-color: var(--color-primary-bg);
+            border-bottom: 1px solid #E5E7EB;
+            border-left: 1px solid #E5E7EB;
+        }
+        #mobile-menu a {
+             color: var(--color-text-main);
         }
     </style>
+    
+    <!-- 
+    |---------------------------------------------------------------|
+    | 2. TAILWIND CONFIGURATION BLOCK: Classes for HTML             |
+    |---------------------------------------------------------------|
+    -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'coffee-primary': '#FFDD00',
-                        'coffee-text': '#0d111c',
-                        'coffee-accent': '#007bff',
+                        'primary-bg': '#FFFFFF',
+                        'text-main': '#3A4750',
+                        'accent-cta': '#FFB3C6',      /* Soft Pink Accent */
+                        'accent-link': '#06D6A0',     /* Vibrant Mint Green */
+                        'accent-teal': '#00ADB5',     /* Bright Teal */
+                        'card-bg': '#FFFFFF',         /* Pure White Card */
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Varela Round', 'sans-serif'], // Updated font
                         cute: ['Pacifico', 'cursive'],
                     }
                 }
@@ -66,64 +113,69 @@
 </head>
 <body class="antialiased">
 
-    <header class="py-6 border-b border-gray-800">
+    <header class="py-6 border-b border-gray-200 bg-primary-bg shadow-sm">
         <nav class="container flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-white">The FinTech Alchemist</a>
+            <!-- Header text uses Soft Charcoal color -->
+            <a href="index.html" class="text-3xl font-bold text-text-main">The FinTech Alchemist</a>
             
-            <!-- Universal Toggle Button - Now visible on ALL screens -->
-            <button id="mobile-menu-button" class="text-white focus:outline-none">
+            <!-- Universal Toggle Button uses Soft Charcoal color -->
+            <button id="mobile-menu-button" class="text-text-main focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </nav>
     </header>
 
-    <!-- Universal Toggle Menu - Hidden by default, absolute positioned to the top right -->
-    <div id="mobile-menu" class="hidden bg-gray-900 absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl border-b border-l border-gray-800 shadow-2xl flex flex-col items-start space-y-2">
-        <a href="blog.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Blog</a>
-        <a href="about.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">About</a>
-        <a href="projects.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Projects</a>
-        <a href="phases.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Phases</a>
-        <a href="learning.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Learning</a>
-        <a href="notes.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Notes</a> <!-- Added Notes link -->
-        <a href="Consultaion.html" class="block py-2 text-blue-500 font-bold w-full text-left">Consultation</a> <!-- Highlighted current page -->
-        <a href="contact.html" class="block py-2 text-white hover:text-blue-500 w-full text-left">Contact</a>
+    <!-- Universal Toggle Menu - Now using bright theme colors -->
+    <div id="mobile-menu" class="hidden absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl shadow-xl flex flex-col items-start space-y-2">
+        <a href="blog.html" class="nav-link block py-2 w-full text-left">Blog</a>
+        <a href="about.html" class="nav-link block py-2 w-full text-left">About</a>
+        <a href="projects.html" class="nav-link block py-2 w-full text-left">Projects</a>
+        <a href="phases.html" class="nav-link block py-2 w-full text-left">Phases</a>
+        <a href="learning.html" class="nav-link block py-2 w-full text-left">Learning</a>
+        <a href="notes.html" class="nav-link block py-2 w-full text-left">Notes</a> 
+        <a href="Consultaion.html" class="nav-link block py-2 text-accent-link font-bold w-full text-left">Consultation</a> <!-- Highlighted in Mint Green -->
+        <a href="contact.html" class="nav-link block py-2 w-full text-left">Contact</a>
     </div>
 
     <section id="consultation" class="py-16">
         <div class="container">
             <h2 class="section-title">Consultation & Collaboration</h2>
+            <p class="text-lg text-text-main/80 text-center mb-12">Let's connect! I offer tailored services blending financial expertise with cutting-edge AI and coding solutions.</p>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Card 1: Updated to dark theme colors -->
-                <div class="bg-gray-800 rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-3">Financial Data Analysis</h3>
-                    <p class="text-gray-400 mb-4">
+                <!-- Card 1: Financial Data Analysis -->
+                <div class="bg-card-bg rounded-2xl shadow-xl p-8 border-4 border-accent-cta/30">
+                    <h3 class="text-3xl font-bold text-accent-teal mb-4">Financial Data Analysis</h3>
+                    <p class="text-text-main/90 mb-6">
                         I offer bespoke data analysis services to help you extract actionable insights from your financial data. This includes market trend analysis, predictive modeling, and performance evaluation.
                     </p>
-                    <ul class="list-disc list-inside text-gray-400 space-y-1 mb-4">
-                        <li>Market trend analysis and forecasting.</li>
+                    <ul class="list-disc list-inside text-text-main/90 space-y-2 mb-8 pl-4">
+                        <li class="font-semibold text-accent-teal">Market trend analysis and forecasting.</li>
                         <li>Portfolio performance and risk assessment.</li>
                         <li>Data visualization and dashboard creation.</li>
                     </ul>
-                    <a href="contact.html" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">Request a Quote</a>
+                    <!-- CTA Button is Mint Green -->
+                    <a href="contact.html" class="inline-block bg-accent-link text-white font-extrabold py-3 px-6 rounded-full shadow-md hover:bg-accent-teal transition duration-300 transform hover:scale-[1.02]">Request a Quote &rarr;</a>
                 </div>
-                <!-- Card 2: Updated to dark theme colors -->
-                <div class="bg-gray-800 rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-3">Collaborative Projects</h3>
-                    <p class="text-gray-400 mb-4">
+                <!-- Card 2: Collaborative Projects -->
+                <div class="bg-card-bg rounded-2xl shadow-xl p-8 border-4 border-accent-cta/30">
+                    <h3 class="text-3xl font-bold text-accent-teal mb-4">Collaborative Projects</h3>
+                    <p class="text-text-main/90 mb-6">
                         I am open to partnering on innovative finance-related initiatives, including joint research, content creation, and FinTech startup advisory.
                     </p>
-                    <ul class="list-disc list-inside text-gray-400 space-y-1 mb-4">
-                        <li>Joint research and whitepaper development.</li>
+                    <ul class="list-disc list-inside text-text-main/90 space-y-2 mb-8 pl-4">
+                        <li class="font-semibold text-accent-teal">Joint research and whitepaper development.</li>
                         <li>Guest blogging or content collaboration.</li>
                         <li>Financial modeling for business plans.</li>
                     </ul>
-                    <a href="contact.html" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">Propose a Project</a>
+                    <!-- CTA Button is Mint Green -->
+                    <a href="contact.html" class="inline-block bg-accent-link text-white font-extrabold py-3 px-6 rounded-full shadow-md hover:bg-accent-teal transition duration-300 transform hover:scale-[1.02]">Propose a Project &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-500 py-6 text-center">
+    <!-- Footer now matches the bright theme -->
+    <footer class="bg-card-bg text-text-main/70 py-6 text-center border-t border-gray-200">
         <div class="container">
             <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
         </div>
