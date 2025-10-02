@@ -90,6 +90,19 @@
         #mobile-menu a {
              color: var(--color-text-main);
         }
+
+        /* Primary button style */
+        .btn-primary {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: transform 0.1s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
     </style>
     
     <!-- 
@@ -123,19 +136,19 @@
     <!-- Header matching the theme -->
     <header class="py-6 border-b border-gray-200 bg-primary-bg shadow-sm">
         <nav class="container flex justify-between items-center">
-            <!-- Note: Adjusted relative path to reach the root index.html (e.g. ../../../index.html) -->
-            <a href="../../../index.html" class="text-3xl font-bold text-text-main">The FinTech Alchemist</a>
+            <!-- Corrected path assuming blog post is one directory deep (blog/post.html) -->
+            <a href="../index.html" class="text-3xl font-bold text-text-main">The FinTech Alchemist</a>
             
-            <!-- Desktop Navigation -->
-            <div class="space-x-8 hidden md:flex">
-                <a href="../../blog.html" class="nav-link">Blog</a>
-                <a href="../../about.html" class="nav-link">About me</a>
-                <a href="../../projects.html" class="nav-link">Projects</a>
-                <a href="../../phases.html" class="nav-link">Phases</a> 
-                <a href="../../learning.html" class="nav-link">Learning</a>
-                <a href="../../notes.html" class="nav-link">Notes</a> <!-- Added Notes link -->
-                <a href="../../Consultation.html" class="nav-link">Consultation</a>
-                <a href="../../contact.html" class="nav-link">Contact</a>
+            <!-- Desktop Navigation (Hidden on all screen sizes) -->
+            <div class="space-x-8 hidden">
+                <a href="../blog.html" class="nav-link text-accent-link font-bold">Blog</a> <!-- Highlighted current section -->
+                <a href="../about.html" class="nav-link">About me</a>
+                <a href="../projects.html" class="nav-link">Projects</a>
+                <a href="../phases.html" class="nav-link">Phases</a> 
+                <a href="../learning.html" class="nav-link">Learning</a>
+                <a href="../notes.html" class="nav-link">Notes</a>
+                <a href="../Consultation.html" class="nav-link">Consultation</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
             </div>
             
             <!-- Mobile Toggle Button -->
@@ -147,14 +160,14 @@
 
     <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" class="hidden absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl border-b border-l border-gray-200 shadow-xl flex flex-col items-start space-y-2">
-        <a href="../../blog.html" class="nav-link block py-2 w-full text-left">Blog</a>
-        <a href="../../about.html" class="nav-link block py-2 w-full text-left">About me</a>
-        <a href="../../projects.html" class="nav-link block py-2 w-full text-left">Projects</a>
-        <a href="../../phases.html" class="nav-link block py-2 w-full text-left">Phases</a>
-        <a href="../../learning.html" class="nav-link block py-2 w-full text-left">Learning</a>
-        <a href="../../notes.html" class="nav-link block py-2 w-full text-left">Notes</a>
-        <a href="../../Consultation.html" class="nav-link block py-2 w-full text-left">Consultation</a>
-        <a href="../../contact.html" class="nav-link block py-2 w-full text-left">Contact</a>
+        <a href="../blog.html" class="nav-link block py-2 text-accent-link font-bold w-full text-left">Blog</a>
+        <a href="../about.html" class="nav-link block py-2 w-full text-left">About me</a>
+        <a href="../projects.html" class="nav-link block py-2 w-full text-left">Projects</a>
+        <a href="../phases.html" class="nav-link block py-2 w-full text-left">Phases</a>
+        <a href="../learning.html" class="nav-link block py-2 w-full text-left">Learning</a>
+        <a href="../notes.html" class="nav-link block py-2 w-full text-left">Notes</a>
+        <a href="../Consultation.html" class="nav-link block py-2 w-full text-left">Consultation</a>
+        <a href="../contact.html" class="nav-link block py-2 w-full text-left">Contact</a>
     </div>
 
     <section id="blog-post" class="py-16">
@@ -213,7 +226,8 @@
             <!-- A nice Call to Action box at the end -->
             <div class="p-8 mt-12 rounded-2xl text-center shadow-lg" style="background-color: var(--color-accent-cta);">
                 <p class="text-xl font-bold mb-4 text-text-main">Ready to follow along?</p>
-                <a href="../../phases.html" class="btn-primary inline-block text-sm" style="background-color: var(--color-accent-teal); box-shadow: 0 4px 0 #007bff; color: white;">
+                <!-- Corrected path to phases.html -->
+                <a href="../phases.html" class="btn-primary inline-block text-sm" style="background-color: var(--color-accent-teal); box-shadow: 0 4px 0 #007bff; color: white;">
                     Explore My 90-Day Roadmap
                 </a>
             </div>
