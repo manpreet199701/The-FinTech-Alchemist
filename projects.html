@@ -161,12 +161,13 @@
 </head>
 <body class="antialiased">
 
-    <header class="py-6 border-b border-gray-200 bg-primary-bg shadow-sm">
+    <!-- REMOVED: border-b border-gray-200 shadow-sm -->
+    <header class="py-6 bg-primary-bg">
         <nav class="container flex justify-between items-center">
             <a href="index.html" class="text-3xl font-bold text-text-main">The FinTech Alchemist</a>
             
-            <!-- Desktop Navigation -->
-            <div class="space-x-8 hidden md:flex">
+            <!-- Desktop Navigation (Hidden on all screen sizes) -->
+            <div class="space-x-8 hidden">
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="about.html" class="nav-link">About me</a>
                 <a href="projects.html" class="nav-link text-accent-link font-bold">Projects</a> <!-- Highlighted current page -->
