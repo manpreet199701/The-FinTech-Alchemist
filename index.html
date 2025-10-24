@@ -4,274 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The FinTech Alchemist</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- LOAD CUSTOM FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
-    
-    <!-- 
-    |---------------------------------------------------------------|
-    | 1. CUSTOM STYLE BLOCK: CSS Variables & Global Styles          |
-    |---------------------------------------------------------------|
-    -->
-    <style>
-        :root {
-            /* Coastal Citrus Palette */
-            --color-primary-bg: #F5F7FA;      /* Background */
-            --color-text-main: #1A202C;       /* Main Text */
-            --color-accent-cta: #00ADB5;      /* Teal Accent */
-            --color-accent-link: #FF577F;     /* Coral Accent */
-            --color-card-bg: #FFFFFF;         /* Card Background */
-        }
-
-        body {
-            /* Primary Font: Montserrat (Set here for global standard CSS rules) */
-            font-family: 'Montserrat', sans-serif; 
-            background-color: var(--color-primary-bg);
-            color: var(--color-text-main);
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem;
-        }
-        .nav-link {
-            transition: all 0.3s ease;
-            color: var(--color-text-main);
-        }
-        .nav-link:hover {
-            color: var(--color-accent-link); /* Lively Coral on hover */
-        }
-        
-        /* Slideshow custom styles */
-        .slideshow-container {
-            position: relative;
-            max-width: 1000px;
-            margin: auto;
-            overflow: hidden;
-            border-radius: 1rem;
-        }
-        .slideshow-slide {
-            display: none;
-        }
-        .slideshow-slide img {
-            width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            object-fit: cover;
-        }
-        .slideshow-text {
-            color: white; 
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            background-color: rgba(26, 32, 44, 0.8);
-        }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            background-color: rgba(26, 32, 44, 0.5);
-        }
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-        .prev:hover, .next:hover {
-            background-color: var(--color-accent-cta); /* Bright Teal on hover */
-        }
-        
-    </style>
-    
-    <!-- 
-    |---------------------------------------------------------------|
-    | 2. TAILWIND CONFIGURATION BLOCK: Classes for HTML             |
-    |---------------------------------------------------------------|
-    -->
-    <script>
-        // This is the essential configuration for the Tailwind CSS framework.
-        tailwind.config = {
-            theme: {
-                extend: {
-                    // Map your custom colors so you can use classes like 'bg-accent-cta'
-                    colors: {
-                        'primary-bg': '#F5F7FA', 
-                        'text-main': '#1A202C',
-                        'accent-cta': '#00ADB5',  /* Bright Teal */
-                        'accent-link': '#FF577F', /* Lively Coral */
-                    },
-                    // Map your custom fonts so you can use classes like 'font-sans'
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        cute: ['Pacifico', 'cursive'],
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </head>
-<body class="antialiased">
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
 
-    <header class="py-6 border-b border-gray-200 bg-white shadow-sm">
-        <nav class="container flex justify-between items-center">
-            <!-- Title now uses the Bright Teal accent color -->
-            <a href="index.html" class="text-3xl font-bold text-accent-cta">The FinTech Alchemist</a>
-            
-            <!-- Toggle Button now uses the main text color -->
-            <button id="mobile-menu-button" class="text-text-main focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Universal Toggle Menu - Now using white background and dark text -->
-    <div id="mobile-menu" class="hidden bg-white absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl border-b border-l border-gray-200 shadow-xl flex flex-col items-start space-y-2">
-        <!-- Links now use dark text and Lively Coral on hover -->
-        <a href="blog.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Blog</a>
-        <a href="about.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">About</a>
-        <a href="projects.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Projects</a>
-        <a href="phases.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Phases</a>
-        <a href="learning.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Learning</a>
-        <a href="notes.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Notes</a>
-        <a href="Consultaion.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Consultation</a>
-        <a href="contact.html" class="block py-2 text-text-main hover:text-accent-link w-full text-left font-semibold">Contact</a>
-    </div>
-
-    <main class="container py-16">
-        <!-- Main content for the homepage -->
-        <div class="text-center mb-12">
-            <!-- H1 now uses the Bright Teal accent color -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-accent-cta leading-tight mb-4">The FinTech Alchemist</h1>
-            <!-- Body text is now Deep Charcoal -->
-            <p class="text-lg sm:text-xl text-text-main/80">Transforming finance with technology. Follow my 3-month journey into the world of AI.</p>
-        </div>
-
-        <!-- Latest Blog Post Section - Card background is now white -->
-        <div class="bg-card-bg rounded-xl p-8 mb-12 shadow-lg border border-gray-200">
-            <!-- Heading is Bright Teal -->
-            <h2 class="text-2xl font-bold mb-4 text-accent-cta">Latest Blog Post</h2>
-            <!-- Link is Lively Coral -->
-            <a href="blog/blog1.html" target="_blank" rel="noopener noreferrer" class="text-xl text-accent-link hover:text-accent-cta hover:underline">
-                The FinTech Alchemist - My 3-Month Journey
-            </a>
-            <p class="text-text-main/80 mt-2">
-                Documenting my intensive 3-month plan to become a FinTech Alchemist...
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section class="text-center mb-20">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+                The FinTech Alchemist
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Transforming finance with technology. Follow my 3-month journey into the world of AI.
             </p>
-        </div>
-
-        <!-- Latest Projects Slideshow - Card background is now white -->
-        <div class="bg-card-bg rounded-xl p-8 mb-12 shadow-lg border border-gray-200">
-            <!-- Heading is Bright Teal -->
-            <h2 class="text-2xl font-bold mb-4 text-center text-accent-cta">Featured Projects</h2>
-            <div class="slideshow-container mt-6">
-                <!-- Slides will be added here -->
-                <div class="slideshow-slide fade">
-                    <img src="https://placehold.co/1000x500/00ADB5/ffffff?text=Project+1+-+Trading+Bot" alt="Placeholder for a trading bot project">
-                    <div class="slideshow-text">
-                        <h3 class="text-xl font-bold">Project 1: Algorithmic Trading Bot</h3>
-                        <p class="text-sm">A Python-based bot that uses historical data to make automated trading decisions.</p>
-                    </div>
-                </div>
-                <div class="slideshow-slide fade">
-                    <img src="https://placehold.co/1000x500/FF577F/ffffff?text=Project+2+-+Risk+Analysis" alt="Placeholder for a risk analysis project">
-                    <div class="slideshow-text">
-                        <h3 class="text-xl font-bold">Project 2: AI-Powered Risk Analysis</h3>
-                        <p class="text-sm">A machine learning model that predicts loan default risk for financial institutions.</p>
-                    </div>
-                </div>
-                <div class="slideshow-slide fade">
-                    <img src="https://placehold.co/1000x500/00ADB5/1A202C?text=Project+3+-+Sentiment+Analysis" alt="Placeholder for a sentiment analysis project">
-                    <div class="slideshow-text">
-                        <h3 class="text-xl font-bold">Project 3: Financial News Sentiment Tracker</h3>
-                        <p class="text-sm">An application that analyzes news headlines to gauge market sentiment in real-time.</p>
-                    </div>
-                </div>
-                
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="flex justify-center gap-4">
+                <a href="#projects" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-medium transition">
+                    View Projects
+                </a>
+                <a href="/blog.html" class="px-6 py-3 border border-purple-500 hover:bg-purple-900/30 rounded-lg font-medium transition">
+                    Read Blog
+                </a>
             </div>
-        </div>
-        
-        <!-- STATIC 'FUEL MY PROJECTS' SECTION - Now using bright colors -->
-        <div class="flex flex-col items-center justify-center p-8 bg-card-bg rounded-3xl shadow-lg mt-12 mb-12 border-4 border-accent-link/50 transition-shadow hover:shadow-2xl hover:shadow-accent-link/20">
-            
-            <!-- H2 uses Lively Coral for a fun, striking contrast -->
-            <h2 class="text-4xl font-cute text-accent-link mb-4 text-center leading-relaxed">
-                Fuel My FinTech Projects!
-            </h2>
-            <p class="text-center text-text-main/80 mb-8 max-w-xl">
-                If you enjoy my journey and the projects I share, consider supporting my work. Every cup of coffee helps **power the research** and keeps me coding late into the night!
-            </p>
-            
-            <!-- CTA button: Bright Teal background, White text, Coral border/focus ring -->
-            <a id="coffee-link" 
-                    href="https://www.buymeacoffee.com/missbuttercickenn" 
-                    target="_blank"
-                    class="w-full sm:w-80 md:w-96 px-10 py-3 text-center
-                           bg-accent-cta text-white text-2xl no-underline
-                           rounded-full shadow-2xl 
-                           flex items-center justify-center 
-                           transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl 
-                           border-2 border-accent-link focus:outline-none focus:ring-4 focus:ring-accent-cta/50
-                           font-cute"> 
-                
-                <span>Buy Me a Coffee!</span>
-            </a>
-            
-        </div>
+        </section>
 
+        <!-- Latest Blog Post -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-6">Latest Blog Post</h2>
+            <div class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700/50 transition">
+                <h3 class="text-2xl font-semibold mb-3">
+                    <a href="/blog/blog1.html" class="hover:text-purple-400 transition">The FinTech Alchemist - My 3-Month Journey</a>
+                </h3>
+                <p class="text-gray-300 mb-4">
+                    Documenting my intensive 3-month plan to become a FinTech Alchemist...
+                </p>
+                <a href="/blog/blog1.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                    Read more <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section id="projects" class="mb-20">
+            <h2 class="text-3xl font-bold mb-6">Featured Projects</h2>
+            
+            <!-- Project 1 -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12 items-center">
+                <div class="order-1 md:order-2">
+                    <img src="https://placehold.co/1000x500/00ADB5/ffffff?text=Project+1+-+Trading+Bot" 
+                         alt="Trading Bot Project" 
+                         class="rounded-xl shadow-xl w-full h-auto">
+                </div>
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-semibold mb-3">Algorithmic Trading Bot</h3>
+                    <p class="text-gray-300 mb-4">
+                        A Python-based bot that uses historical data to make automated trading decisions.
+                    </p>
+                    <a href="/projects.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                        View Project <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12 items-center">
+                <div>
+                    <img src="https://placehold.co/1000x500/FF577F/ffffff?text=Project+2+-+Risk+Analysis" 
+                         alt="Risk Analysis Project" 
+                         class="rounded-xl shadow-xl w-full h-auto">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-3">AI-Powered Risk Analysis</h3>
+                    <p class="text-gray-300 mb-4">
+                        A machine learning model that predicts loan default risk for financial institutions.
+                    </p>
+                    <a href="/projects.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                        View Project <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-1 md:order-2">
+                    <img src="https://placehold.co/1000x500/00ADB5/1A202C?text=Project+3+-+Sentiment+Analysis" 
+                         alt="Sentiment Analysis Project" 
+                         class="rounded-xl shadow-xl w-full h-auto">
+                </div>
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-semibold mb-3">Financial News Sentiment Tracker</h3>
+                    <p class="text-gray-300 mb-4">
+                        An application that analyzes news headlines to gauge market sentiment in real-time.
+                    </p>
+                    <a href="/projects.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                        View Project <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="bg-gradient-to-r from-purple-900/50 to-blue-900/50 rounded-xl p-8 text-center">
+            <h2 class="text-2xl font-bold mb-4">Fuel My FinTech Projects!</h2>
+            <p class="mb-6 max-w-2xl mx-auto">
+                If you enjoy my journey and the projects I share, consider supporting my work. Every cup of coffee helps <span class="font-semibold">power the research</span> and keeps me coding late into the night!
+            </p>
+            <a href="https://www.buymeacoffee.com/missbuttercickenn" target="_blank" class="inline-flex items-center px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-900 rounded-lg font-medium transition">
+                <i data-feather="coffee" class="mr-2"></i> Buy Me a Coffee!
+            </a>
+        </section>
     </main>
 
-    <footer class="bg-white text-text-main/70 py-6 text-center border-t border-gray-200">
-        <div class="container">
-            <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
-        </div>
-    </footer>
+    <custom-footer></custom-footer>
 
+    <!-- Scripts -->
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
     <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        // This is the universal toggle logic, hiding or showing the menu on click.
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        feather.replace();
+        VANTA.NET({
+            el: "body",
+            color: 0x7e22ce,
+            backgroundColor: 0x111827,
+            points: 12,
+            maxDistance: 20,
+            spacing: 15
         });
-
-        // Slideshow logic
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("slideshow-slide");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slides[slideIndex-1].style.display = "block";  
-        }
     </script>
+<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
 </body>
 </html>
