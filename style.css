@@ -1,0 +1,42 @@
+/* Custom styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom underline effect */
+.underline-effect {
+    position: relative;
+}
+
+.underline-effect::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #9333ea, #3b82f6);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.underline-effect:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Project card hover effect */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+}
