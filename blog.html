@@ -7,171 +7,32 @@
     <link rel="stylesheet" href="global-theme.css">
     <link rel="stylesheet" href="main.css">
     <script src="nav.js"></script>
-    
-    <!-- LOAD CUSTOM FONTS: Varela Round (New friendly font), Pacifico for accent -->
-    <!-- Switched from Inter to Varela Round for the Sweet Cartoon theme -->
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Pacifico&display=swap" rel="stylesheet">
-    
-    <!-- 
-    |---------------------------------------------------------------|
-    | 1. CUSTOM STYLE BLOCK: CSS Variables & Global Styles          |
-    |---------------------------------------------------------------|
-    -->
-    <style>
-        :root {
-            /* Sweet Cartoon Palette */
-            --color-primary-bg: #FFFFFF;      /* CHANGED to Pure White Background */
-            --color-text-main: #3A4750;       /* Soft Charcoal Text */
-            --color-accent-cta: #FFB3C6;      /* Soft Pink Accent */
-            --color-accent-link: #06D6A0;     /* Vibrant Mint Green Link/Hover */
-            --color-card-bg: #FFFFFF;         /* CHANGED to Pure White Card */
-            --color-accent-teal: #00ADB5;     /* Bright Teal Accent */
-        }
-
-        body {
-            /* Primary Font: Varela Round */
-            font-family: 'Varela Round', sans-serif;
-            background-color: var(--color-primary-bg);
-            color: var(--color-text-main);
-            transition: background-color 0.3s, color 0.3s;
-            
-            /* --- PATTERN (Soft polka dots) --- */
-            /* Note: Keeping the pattern, but it will be slightly less visible against the pure white */
-            background-image: radial-gradient(var(--color-accent-link) 0.5px, transparent 0.5px);
-            background-size: 20px 20px;
-            opacity: 0.95; /* Make pattern very subtle */
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem;
-        }
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--color-accent-teal); /* Bright Teal */
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .nav-link {
-            transition: all 0.3s ease;
-            color: var(--color-text-main); /* Soft Charcoal */
-            font-weight: 600;
-        }
-        .nav-link:hover {
-            color: var(--color-accent-link); /* Mint Green on hover */
-        }
-
-        /* Menu specific styles for bright theme */
-        #mobile-menu {
-            background-color: var(--color-primary-bg);
-            border-bottom: 1px solid #E5E7EB;
-            border-left: 1px solid #E5E7EB;
-        }
-        #mobile-menu a {
-             color: var(--color-text-main);
-        }
-    </style>
-    
-    <!-- 
-    |---------------------------------------------------------------|
-    | 2. TAILWIND CONFIGURATION BLOCK: Classes for HTML             |
-    |---------------------------------------------------------------|
-    -->
-    <script>
-        // This configuration maps custom names for use in Tailwind utility classes.
-        // Updated to match the Sweet Cartoon palette (Teal/Pink/Mint).
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-bg': '#FFFFFF',      /* CHANGED to Pure White Background */
-                        'text-main': '#3A4750',
-                        'accent-cta': '#FFB3C6',      /* Soft Pink Accent */
-                        'accent-link': '#06D6A0',     /* Vibrant Mint Green */
-                        'accent-teal': '#00ADB5',     /* Bright Teal */
-                        'card-bg': '#FFFFFF',         /* CHANGED to Pure White Card */
-                    },
-                    fontFamily: {
-                        sans: ['Varela Round', 'sans-serif'], // Updated font
-                        cute: ['Pacifico', 'cursive'],
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="antialiased">
+<body>
     <!-- Navigation loaded by nav.js -->
     
-    <div style="display:none"><header class="py-6 border-b border-gray-200 bg-primary-bg shadow-sm">
-        <nav class="container flex justify-between items-center">
-            <!-- Header text uses Soft Charcoal color -->
-            <a href="index.html" class="text-3xl font-bold text-text-main">The FinTech Alchemist</a>
-            
-            <!-- Universal Toggle Button uses Soft Charcoal color -->
-            <button id="mobile-menu-button" class="text-text-main focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </nav>
-    </header>
+    <main class="main-content">
+        <div class="container">
+            <h1 class="text-5xl font-bold mb-8 text-center">The Blog</h1>
+            <p class="text-xl text-center mb-12">Here you can find all my latest thoughts, updates, and deep dives into the world of FinTech.</p>
 
-    <!-- Universal Toggle Menu - Now using bright theme colors -->
-    <div id="mobile-menu" class="hidden absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl shadow-xl flex flex-col items-start space-y-2">
-        <!-- Current page link uses Mint Green and Bold font -->
-        <a href="blog.html" class="nav-link block py-2 text-accent-link font-bold w-full text-left">Blog</a>
-        <a href="about.html" class="nav-link block py-2 w-full text-left">About</a>
-        <a href="projects.html" class="nav-link block py-2 w-full text-left">Projects</a>
-        <a href="phases.html" class="nav-link block py-2 w-full text-left">Phases</a>
-        <a href="learning.html" class="nav-link block py-2 w-full text-left">Learning</a>
-        <a href="notes.html" class="nav-link block py-2 w-full text-left">Notes</a>
-        <a href="Consultaion.html" class="nav-link block py-2 w-full text-left">Consultation</a>
-        <a href="contact.html" class="nav-link block py-2 w-full text-left">Contact</a>
-    </div>
-
-    <main class="container py-16">
-        <!-- Main title is Bright Teal -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-accent-teal leading-tight mb-8 text-center">The Blog</h1>
-        <p class="text-lg text-text-main/80 text-center mb-12">Here you can find all my latest thoughts, updates, and deep dives into the world of FinTech.</p>
-
-        <!-- Blog Post List -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Example Blog Post Card -->
-            <div class="bg-card-bg rounded-2xl p-6 shadow-lg transform transition duration-300 hover:scale-105 border-4 border-accent-link/30">
-                <a href="blog/blog1.html" class="block">
-                    <!-- Image uses a placeholder for now, ensuring aesthetics -->
-                    <!-- Background color changed to Soft Pink (FFB3C6) and text color to Soft Charcoal (3A4750) -->
-                    <img class="w-full rounded-lg mb-4 h-48 object-cover" 
-                        src="https://placehold.co/600x400/FFB3C6/3A4750?text=FinTech+Journey" 
-                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFB3C6/3A4750?text=FinTech+Journey'" 
-                        alt="A conceptual image representing the blend of finance and artificial intelligence.">
-                    <h2 class="text-xl font-bold text-text-main hover:text-accent-teal">My 3-Month Journey to Become a FinTech Alchemist</h2>
-                    <p class="text-text-main/70 text-sm mt-2">Published: Oct 20, 2025</p>
-                    <p class="text-text-main/80 mt-4">Welcome to the start of a journey that's been years in the making. For a long time, my career has been a mix of commerce, logistics, and finance...</p>
-                    <!-- Link is Vibrant Mint Green -->
-                    <span class="text-accent-link mt-4 inline-block font-semibold hover:underline">Read More &rarr;</span>
-                </a>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card">
+                    <a href="blog/blog1.html">
+                        <img class="w-full rounded-lg mb-4" 
+                            src="https://placehold.co/600x400/FFB3C6/3A4750?text=FinTech+Journey" 
+                            alt="FinTech Journey">
+                        <h2 class="text-2xl font-bold mb-3">My 3-Month Journey to Become a FinTech Alchemist</h2>
+                        <p class="mb-4">Welcome to the start of a journey that's been years in the making. For a long time, my career has been a mix of commerce, logistics, and finance...</p>
+                        <span class="text-accent-link font-semibold">Read More &rarr;</span>
+                    </a>
+                </div>
             </div>
-
-            <!-- You can add more blog post cards here -->
         </div>
     </main>
-
-    <!-- Footer now matches the bright theme -->
-    <footer class="bg-card-bg text-text-main/70 py-6 text-center border-t border-gray-200">
-        <div class="container">
-            <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
-        </div>
+    
+    <footer>
+        <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
     </footer>
-
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        // Universal toggle logic
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
