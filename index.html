@@ -11,7 +11,45 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </head>
 <body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
-    <custom-navbar></custom-navbar>
+    <!-- Navigation Header -->
+    <header class="bg-gray-800 border-b border-gray-700">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-purple-400">The FinTech Alchemist</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="blog.html" class="hover:text-purple-400 transition">Blog</a>
+                <a href="about.html" class="hover:text-purple-400 transition">About</a>
+                <a href="projects.html" class="hover:text-purple-400 transition">Projects</a>
+                <a href="phases.html" class="hover:text-purple-400 transition">Phases</a>
+                <a href="learning.html" class="hover:text-purple-400 transition">Learning</a>
+                <a href="notes.html" class="hover:text-purple-400 transition">Notes</a>
+                <a href="Consultaion.html" class="hover:text-purple-400 transition">Consultation</a>
+                <a href="contact.html" class="hover:text-purple-400 transition">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-100 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+                <a href="blog.html" class="py-2 hover:text-purple-400 transition">Blog</a>
+                <a href="about.html" class="py-2 hover:text-purple-400 transition">About</a>
+                <a href="projects.html" class="py-2 hover:text-purple-400 transition">Projects</a>
+                <a href="phases.html" class="py-2 hover:text-purple-400 transition">Phases</a>
+                <a href="learning.html" class="py-2 hover:text-purple-400 transition">Learning</a>
+                <a href="notes.html" class="py-2 hover:text-purple-400 transition">Notes</a>
+                <a href="Consultaion.html" class="py-2 hover:text-purple-400 transition">Consultation</a>
+                <a href="contact.html" class="py-2 hover:text-purple-400 transition">Contact</a>
+            </div>
+        </div>
+    </header>
 
     <main class="flex-grow container mx-auto px-4 py-12">
         <!-- Hero Section -->
@@ -26,7 +64,7 @@
                 <a href="#projects" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-medium transition">
                     View Projects
                 </a>
-                <a href="/blog.html" class="px-6 py-3 border border-purple-500 hover:bg-purple-900/30 rounded-lg font-medium transition">
+                <a href="blog.html" class="px-6 py-3 border border-purple-500 hover:bg-purple-900/30 rounded-lg font-medium transition">
                     Read Blog
                 </a>
             </div>
@@ -37,12 +75,12 @@
             <h2 class="text-3xl font-bold mb-6">Latest Blog Post</h2>
             <div class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700/50 transition">
                 <h3 class="text-2xl font-semibold mb-3">
-                    <a href="/blog/blog1.html" class="hover:text-purple-400 transition">The FinTech Alchemist - My 3-Month Journey</a>
+                    <a href="blog/blog1.html" class="hover:text-purple-400 transition">The FinTech Alchemist - My 3-Month Journey</a>
                 </h3>
                 <p class="text-gray-300 mb-4">
                     Documenting my intensive 3-month plan to become a FinTech Alchemist...
                 </p>
-                <a href="/blog/blog1.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                <a href="blog/blog1.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
                     Read more <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
                 </a>
             </div>
@@ -64,7 +102,7 @@
                     <p class="text-gray-300 mb-4">
                         A Python-based bot that uses historical data to make automated trading decisions.
                     </p>
-                    <a href="/projects.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                    <a href="projects.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
                         View Project <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
                     </a>
                 </div>
@@ -82,7 +120,7 @@
                     <p class="text-gray-300 mb-4">
                         A machine learning model that predicts loan default risk for financial institutions.
                     </p>
-                    <a href="/projects.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                    <a href="projects.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
                         View Project <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
                     </a>
                 </div>
@@ -100,7 +138,7 @@
                     <p class="text-gray-300 mb-4">
                         An application that analyzes news headlines to gauge market sentiment in real-time.
                     </p>
-                    <a href="/projects.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
+                    <a href="projects.html" class="text-purple-400 hover:text-purple-300 inline-flex items-center">
                         View Project <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
                     </a>
                 </div>
@@ -119,14 +157,24 @@
         </section>
     </main>
 
-    <custom-footer></custom-footer>
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-6 text-center">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-400">&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Scripts -->
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="script.js"></script>
     <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Feather icons
         feather.replace();
+        
+        // Vanta background
         VANTA.NET({
             el: "body",
             color: 0x7e22ce,
