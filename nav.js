@@ -1,20 +1,26 @@
 // Navigation Component - Auto-loads on all pages
 document.addEventListener('DOMContentLoaded', function() {
+    // Determine base path based on current location
+    const path = window.location.pathname;
+    const isSubdir = path.includes('/blog/') || path.includes('/notes/') || path.includes('/phases/');
+    const isDeepSubdir = path.includes('/phase2/') || path.includes('/phase3/') || path.includes('/phase4/');
+    const base = isDeepSubdir ? '../../' : (isSubdir ? '../' : '');
+    
     const navHTML = `
         <header style="background-color: var(--color-neutral-white); border-bottom: 2px solid var(--color-secondary-accent); position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <nav class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
-                <a href="index.html" style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent-highlight);">The FinTech Alchemist</a>
+                <a href="${base}index.html" style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent-highlight);">The FinTech Alchemist</a>
                 
                 <!-- Desktop Menu -->
                 <div id="desktop-nav" style="display: none; gap: 1.5rem;">
-                    <a href="blog.html" style="color: var(--color-text-main);">Blog</a>
-                    <a href="about.html" style="color: var(--color-text-main);">About</a>
-                    <a href="projects.html" style="color: var(--color-text-main);">Projects</a>
-                    <a href="phases.html" style="color: var(--color-text-main);">Phases</a>
-                    <a href="learning.html" style="color: var(--color-text-main);">Learning</a>
-                    <a href="notes.html" style="color: var(--color-text-main);">Notes</a>
-                    <a href="Consultaion.html" style="color: var(--color-text-main);">Consultation</a>
-                    <a href="contact.html" style="color: var(--color-text-main);">Contact</a>
+                    <a href="${base}blog.html" style="color: var(--color-text-main);">Blog</a>
+                    <a href="${base}about.html" style="color: var(--color-text-main);">About</a>
+                    <a href="${base}projects.html" style="color: var(--color-text-main);">Projects</a>
+                    <a href="${base}phases.html" style="color: var(--color-text-main);">Phases</a>
+                    <a href="${base}learning.html" style="color: var(--color-text-main);">Learning</a>
+                    <a href="${base}notes.html" style="color: var(--color-text-main);">Notes</a>
+                    <a href="${base}Consultaion.html" style="color: var(--color-text-main);">Consultation</a>
+                    <a href="${base}contact.html" style="color: var(--color-text-main);">Contact</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -28,14 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Mobile Dropdown -->
             <div id="nav-menu" style="display: none; background-color: var(--color-neutral-white); border-top: 1px solid var(--color-secondary-accent);">
                 <div class="container" style="padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <a href="blog.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Blog</a>
-                    <a href="about.html" style="padding: 0.5rem 0; color: var(--color-text-main);">About</a>
-                    <a href="projects.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Projects</a>
-                    <a href="phases.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Phases</a>
-                    <a href="learning.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Learning</a>
-                    <a href="notes.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Notes</a>
-                    <a href="Consultaion.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Consultation</a>
-                    <a href="contact.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Contact</a>
+                    <a href="${base}blog.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Blog</a>
+                    <a href="${base}about.html" style="padding: 0.5rem 0; color: var(--color-text-main);">About</a>
+                    <a href="${base}projects.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Projects</a>
+                    <a href="${base}phases.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Phases</a>
+                    <a href="${base}learning.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Learning</a>
+                    <a href="${base}notes.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Notes</a>
+                    <a href="${base}Consultaion.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Consultation</a>
+                    <a href="${base}contact.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Contact</a>
                 </div>
             </div>
         </header>
