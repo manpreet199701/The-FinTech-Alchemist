@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1 - Week 4: Project Kickoff</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary-bg: #FFFFFF;
+            --color-text-main: #3A4750;
+            --color-accent-cta: #FFB3C6;
+            --color-accent-link: #06D6A0;
+            --color-card-bg: #FFFFFF;
+            --color-accent-teal: #00ADB5;
+        }
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: var(--color-primary-bg);
+            color: var(--color-text-main);
+            background-image: radial-gradient(var(--color-accent-link) 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            opacity: 0.95;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+        .section-title {
+            font-size: 3rem; font-weight: 700; color: var(--color-accent-teal);
+            margin-bottom: 2.5rem; text-align: center; position: relative; padding-bottom: 1rem;
+        }
+        .section-title::after {
+            content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+            width: 120px; height: 6px; background-color: var(--color-accent-cta); border-radius: 9999px;
+        }
+        .nav-link { transition: color 0.3s ease; color: var(--color-text-main); font-weight: 600; }
+        .nav-link:hover { color: var(--color-accent-link); }
+        #mobile-menu { background-color: var(--color-card-bg); border-bottom: 1px solid #E5E7EB; border-left: 1px solid #E5E7EB; }
+    </style>
+</head>
+<body>
+    <header class="py-6 border-b border-gray-200 bg-white shadow-sm">
+        <nav class="container flex justify-between items-center">
+            <a href="../index.html" class="text-3xl font-bold text-gray-800">The FinTech Alchemist</a>
+            <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+    </header>
+    <div id="mobile-menu" class="hidden absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl shadow-xl flex flex-col space-y-2">
+        <a href="../blog.html" class="nav-link block py-2">Blog</a>
+        <a href="../about.html" class="nav-link block py-2">About</a>
+        <a href="../projects.html" class="nav-link block py-2">Projects</a>
+        <a href="../phases.html" class="nav-link block py-2 text-green-500 font-bold">Phases</a>
+        <a href="../learning.html" class="nav-link block py-2">Learning</a>
+        <a href="../notes.html" class="nav-link block py-2">Notes</a>
+        <a href="../Consultaion.html" class="nav-link block py-2">Consultation</a>
+        <a href="../contact.html" class="nav-link block py-2">Contact</a>
+    </div>
+    <section class="py-20">
+        <div class="container">
+            <h1 class="section-title">Phase 1: Week 4 - Project Kickoff</h1>
+            <div class="text-lg max-w-4xl mx-auto text-center mb-12">
+                <p class="mb-4">Week 4 marks the beginning of hands-on projects, applying learned concepts to real-world financial data analysis.</p>
+                <p class="text-sm font-semibold" style="color:var(--color-accent-teal);">
+                    <a href="phase1.html" class="hover:underline">← Back to Phase 1 Overview</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-white text-gray-600 py-6 text-center border-t">
+        <div class="container"><p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p></div>
+    </footer>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
