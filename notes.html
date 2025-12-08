@@ -7,260 +7,42 @@
     <link rel="stylesheet" href="global-theme.css">
     <link rel="stylesheet" href="main.css">
     <script src="nav.js"></script>
-    
-    <!-- LOAD CUSTOM FONTS: Varela Round (New friendly font), Pacifico for accent -->
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Pacifico&display=swap" rel="stylesheet">
-    
-    <!-- 
-    |---------------------------------------------------------------|
-    | 1. CUSTOM STYLE BLOCK: CSS Variables & Global Styles          |
-    |---------------------------------------------------------------|
-    -->
-    <style>
-        :root {
-            /* Sweet Cartoon Palette */
-            --color-primary-bg: #FFFFFF;      /* Pure White Background */
-            --color-text-main: #3A4750;       /* Soft Charcoal Text */
-            --color-accent-cta: #FFB3C6;      /* Soft Pink Accent */
-            --color-accent-link: #06D6A0;     /* Vibrant Mint Green Link/Hover */
-            --color-card-bg: #FFFFFF;         /* Pure White Card */
-            --color-accent-teal: #00ADB5;     /* Bright Teal Accent */
-        }
-
-        body {
-            /* Primary Font: Varela Round */
-            font-family: 'Varela Round', sans-serif;
-            background-color: var(--color-primary-bg);
-            color: var(--color-text-main);
-            
-            /* --- PATTERN (Soft polka dots) --- */
-            background-image: radial-gradient(var(--color-accent-link) 0.5px, transparent 0.5px);
-            background-size: 20px 20px;
-            opacity: 0.95; 
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem;
-        }
-        /* Custom styles for the main content card wrapper */
-        .main-card-wrapper {
-            background-color: var(--color-card-bg); 
-            border-radius: 2rem; /* Larger border radius for main container */
-            padding: 2.5rem;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Prominent shadow */
-            border: 6px solid var(--color-accent-cta); /* Thick Soft Pink border */
-        }
-        
-        /* Custom styled headline (h1/h2) */
-        .section-title-custom {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--color-accent-teal); /* Bright Teal */
-            margin-bottom: 2rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 0.75rem;
-        }
-        .section-title-custom::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 100px; 
-            height: 6px; 
-            background-color: var(--color-accent-cta); /* Soft Pink Accent */
-            border-radius: 9999px; 
-        }
-
-        /* Nav link styles */
-        .nav-link {
-            transition: color 0.3s ease;
-            color: var(--color-text-main); /* Soft Charcoal */
-            font-weight: 600;
-        }
-        .nav-link:hover {
-            color: var(--color-accent-link); /* Mint Green on hover */
-        }
-
-        /* Custom style for template cards/links */
-        .template-card {
-            background-color: var(--color-card-bg); /* Pure White */
-            padding: 1.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-            text-decoration: none; 
-            display: block;
-            border: 2px solid #E5E7EB; /* Light grey border for non-completed states */
-        }
-        .template-card:hover {
-            transform: translateY(-5px);
-            background-color: #F8FAFC; 
-            border-color: var(--color-accent-cta); /* Soft Pink border on hover */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Menu specific styles for bright theme */
-        #mobile-menu {
-            background-color: var(--color-primary-bg);
-            border-bottom: 1px solid #E5E7EB;
-            border-left: 1px solid #E5E7EB;
-        }
-        #mobile-menu a {
-             color: var(--color-text-main);
-        }
-    </style>
-    
-    <!-- 
-    |---------------------------------------------------------------|
-    | 2. TAILWIND CONFIGURATION BLOCK: Classes for HTML             |
-    |---------------------------------------------------------------|
-    -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-bg': '#FFFFFF',
-                        'text-main': '#3A4750',
-                        'accent-cta': '#FFB3C6',      /* Soft Pink Accent */
-                        'accent-link': '#06D6A0',     /* Vibrant Mint Green */
-                        'accent-teal': '#00ADB5',     /* Bright Teal */
-                        'card-bg': '#FFFFFF',         /* Pure White Card */
-                    },
-                    fontFamily: {
-                        sans: ['Varela Round', 'sans-serif'],
-                        cute: ['Pacifico', 'cursive'],
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="antialiased">
-    <!-- Navigation loaded by nav.js -->
-    
-    <div style="display:none"><header class="py-6 border-b border-gray-200 bg-primary-bg shadow-sm">
-        <nav class="container flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-text-main">The FinTech Alchemist</a>
-            
-            <!-- Universal Toggle Button uses Soft Charcoal color -->
-            <button id="mobile-menu-button" class="text-text-main focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Universal Toggle Menu - Now using bright theme colors -->
-    <div id="mobile-menu" class="hidden absolute top-[75px] right-0 z-50 w-48 py-4 px-4 rounded-bl-xl shadow-xl flex flex-col items-start space-y-2">
-        <a href="blog.html" class="nav-link block py-2 w-full text-left">Blog</a>
-        <a href="about.html" class="nav-link block py-2 w-full text-left">About</a>
-        <a href="projects.html" class="nav-link block py-2 w-full text-left">Projects</a>
-        <a href="phases.html" class="nav-link block py-2 w-full text-left">Phases</a>
-        <a href="learning.html" class="nav-link block py-2 w-full text-left">Learning</a>
-        <a href="notes.html" class="nav-link block py-2 text-accent-link font-bold w-full text-left">Notes</a> <!-- Highlighted in Mint Green -->
-        <a href="Consultaion.html" class="nav-link block py-2 w-full text-left">Consultation</a>
-        <a href="contact.html" class="nav-link block py-2 w-full text-left">Contact</a>
-    </div>
-
-    <main class="container py-16">
-        <div class="main-card-wrapper">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-accent-teal text-center mb-6 pb-4">My FinTech & AI Notes & Templates</h1>
-            <p class="text-text-main/80 text-center mb-12 max-w-2xl mx-auto">
-                This is the central hub for structured learning. Access your completed study chapters below, or start a new note using a template.
+<body>
+    <main class="main-content">
+        <div class="container">
+            <h1 class="text-5xl font-bold text-center mb-6">My FinTech & AI Notes</h1>
+            <p class="text-center mb-12">
+                This is the central hub for structured learning. Access your completed study chapters below.
             </p>
             
-            <!-- SECTION: Your Completed Study Chapters -->
-            <h2 class="text-2xl font-semibold text-accent-teal mb-6 border-t border-gray-100 pt-6">Your Completed Study Chapters</h2>
-
-            <div class="grid md:grid-cols-2 gap-6 mb-12">
-                <!-- Link to the new Note 1 file - Strong Mint Green Border for Completion -->
-                <a href="notes/notes1.html" class="template-card border-2 border-accent-link">
-                    <span class="text-sm font-bold text-accent-link block mb-1">CHAPTER 1</span>
-                    <h3 class="text-xl font-semibold mb-1 text-accent-teal">Introduction to Python</h3>
-                    <p class="text-text-main/70 text-sm">
-                        Comprehensive overview of Python programming for data science, covering syntax, libraries (Pandas, NumPy), and Jupyter notebooks.
-                    </p>
-                </a>
-                
-                <!-- Placeholder for future completed notes - Dashed Soft Pink Border -->
-                <div class="template-card border-2 border-dashed border-accent-cta/70 flex items-center justify-center min-h-[100px]">
-                     <p class="text-text-main/50 italic">No other chapters completed yet. Start a new template below!</p>
-                </div>
-            </div>
-
-
-            <!-- SECTION: Note Templates -->
-            <h2 class="text-2xl font-semibold text-accent-teal mb-6 border-t border-gray-100 pt-6">Note Templates (Start a New Chapter)</h2>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                
-                <!-- Financial Analysis Template Link - Soft Charcoal text in template cards -->
-                <a href="notes/template-financial-analysis.html" class="template-card">
-                    <h3 class="text-xl font-semibold mb-1 text-accent-teal">Financial Statement Analysis</h3>
-                    <p class="text-text-main/70 text-sm">
-                        Structured layout for analyzing company financials, calculating key ratios (liquidity, profitability), and summarizing valuation.
-                    </p>
-                </a>
-
-                <!-- Machine Learning Template Link -->
-                <a href="notes/template-machine-learning.html" class="template-card">
-                    <h3 class="text-xl font-semibold mb-1 text-accent-teal">Machine Learning Model Development</h3>
-                    <p class="text-text-main/70 text-sm">
-                        Template for documenting ML projects, including data preparation, feature engineering, hyperparameters, and backtesting metrics.
-                    </p>
-                </a>
-
-                <!-- Creative Synthesis Template Link - Using Soft Pink for extra emphasis -->
-                <a href="notes/template-creative-synthesis.html" class="template-card">
-                    <h3 class="text-xl font-semibold mb-1 text-accent-cta">Creative Synthesis & Brainstorming</h3>
-                    <p class="text-text-main/70 text-sm">
-                        Template for connecting core concepts to external fields, brainstorming new project ideas, and mapping real-world impact.
-                    </p>
+            <h2 class="text-3xl font-semibold mb-6">Your Completed Study Chapters</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <a href="notes/notes1.html" class="card">
+                    <h3 class="text-2xl font-semibold mb-2">Introduction to Python</h3>
+                    <p>Comprehensive overview of Python programming for data science.</p>
                 </a>
             </div>
 
-            <!-- SECTION: Quick Reference Notes -->
-            <h2 class="text-2xl font-semibold text-accent-teal border-t border-gray-100 pt-6 mb-6">Quick Reference Notes (Examples)</h2>
-
-            <div class="space-y-6">
-                <!-- Note 1 - Using light background and Soft Pink border for reference notes -->
-                <div class="bg-gray-100 p-5 rounded-xl border-2 border-accent-cta/50 shadow-sm">
-                    <h3 class="text-xl font-semibold text-accent-teal mb-2">Understanding LLM Tokenization</h3>
-                    <p class="text-text-main/80">
-                        Tokenization is the process of breaking down text into smaller units (tokens). These tokens are the fundamental units models like Gemini use to process information. Shorter, common words often get their own token, while complex words are broken down into subwords. This affects cost and model context window usage.
-                    </p>
-                </div>
-                
-                <!-- Note 2 -->
-                <div class="bg-gray-100 p-5 rounded-xl border-2 border-accent-cta/50 shadow-sm">
-                    <h3 class="text-xl font-semibold text-accent-teal mb-2">Alpha in Quant Trading</h3>
-                    <p class="text-text-main/80">
-                        Alpha ($\alpha$) represents the excess return of an investment relative to the return of a benchmark index. It's often used as a measure of an investment manager's performance or the quality of a trading strategy. A positive alpha indicates the investment outperformed the market, while a negative alpha indicates underperformance.
-                    </p>
-                </div>
+            <h2 class="text-3xl font-semibold mb-6">Note Templates</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="notes/template-financial-analysis.html" class="card">
+                    <h3 class="text-2xl font-semibold mb-2">Financial Statement Analysis</h3>
+                    <p>Structured layout for analyzing company financials.</p>
+                </a>
+                <a href="notes/template-machine-learning.html" class="card">
+                    <h3 class="text-2xl font-semibold mb-2">Machine Learning Model Development</h3>
+                    <p>Template for documenting ML projects.</p>
+                </a>
+                <a href="notes/template-creative-synthesis.html" class="card">
+                    <h3 class="text-2xl font-semibold mb-2">Creative Synthesis & Brainstorming</h3>
+                    <p>Template for connecting core concepts to external fields.</p>
+                </a>
             </div>
-            
         </div>
     </main>
-
-    <!-- Footer now matches the bright theme -->
-    <footer class="bg-card-bg text-text-main/70 py-6 text-center border-t border-gray-200 mt-12">
-        <div class="container">
-            <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
-        </div>
+    <footer>
+        <p>&copy; 2025 The FinTech Alchemist. All rights reserved.</p>
     </footer>
-
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        // Toggle logic for the universal menu
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
