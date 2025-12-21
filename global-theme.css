@@ -209,3 +209,105 @@ body, html {
     background-color: var(--color-base-bg) !important;
     color: var(--color-text-main) !important;
 }
+
+/* ============================================
+   CTA COMPONENTS
+   ============================================ */
+
+/* CTA Box - Soft, non-intrusive engagement prompts */
+.cta-box {
+    background: linear-gradient(135deg, var(--color-secondary-accent) 0%, #C4E5F1 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    text-align: center;
+    margin: var(--spacing-xl) 0;
+    border: 2px solid rgba(255, 120, 172, 0.2);
+}
+
+.cta-box h3 {
+    color: var(--color-text-main);
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.cta-box p {
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Social Links Grid */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--color-neutral-white);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-main);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    color: var(--color-accent-highlight);
+}
+
+/* Enhanced Footer with Social Icons */
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+footer .footer-social a {
+    color: var(--color-text-main);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .footer-social a:hover {
+    color: var(--color-accent-highlight);
+}
+
+/* Responsive CTA adjustments */
+@media (max-width: 768px) {
+    .cta-box {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+    
+    .cta-box h3 {
+        font-size: 1.5rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-link {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
