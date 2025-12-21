@@ -214,6 +214,69 @@ body, html {
    CTA COMPONENTS
    ============================================ */
 
+/* Footer Magnet - Pre-footer sign-off engagement */
+.footer-magnet {
+    background-color: var(--color-neutral-white);
+    border-top: 4px solid var(--color-accent-highlight);
+    padding: 3.5rem var(--spacing-md) 4rem;
+    text-align: center;
+    margin: 0;
+}
+
+.footer-magnet h3 {
+    color: #1a1a1a;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.footer-magnet p {
+    color: #555555;
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.footer-magnet .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px rgba(255, 120, 172, 0.25);
+}
+
+.footer-magnet .btn:hover {
+    box-shadow: 0 4px 12px rgba(255, 120, 172, 0.35);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 768px) {
+    .footer-magnet {
+        padding: 2rem var(--spacing-sm) 2.5rem;
+    }
+    
+    .footer-magnet h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-magnet p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-magnet .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
 /* CTA Box - Soft, non-intrusive engagement prompts */
 .cta-box {
     background: linear-gradient(135deg, var(--color-secondary-accent) 0%, #C4E5F1 100%);
