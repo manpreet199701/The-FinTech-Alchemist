@@ -1,0 +1,18 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="signupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF78AC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF9AC1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="12" cy="12" r="11" fill="url(#signupGrad)" stroke="#FFFFFF" stroke-width="1"/>
+  
+  <!-- Plus sign -->
+  <path d="M12 7v10M7 12h10" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- User icon -->
+  <circle cx="12" cy="9" r="2" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M8 17c0-2.5 1.8-4 4-4s4 1.5 4 4" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+</svg>
