@@ -3,13 +3,36 @@
    The FinTech Alchemist Website
    ============================================ */
 
-/* CSS Variables */
+/* Approved Color Tokens */
 :root {
-    --color-base-bg: #F2F0EA;
-    --color-secondary-accent: #A8D5E3;
-    --color-accent-highlight: #FF78AC;
-    --color-text-main: #333333;
-    --color-neutral-white: #FFFFFF;
+    /* Backgrounds */
+    --bg-primary: #ffffff;
+    --bg-alternate: #f5f5f5;
+    --bg-card: #e9e9e9;
+    --bg-dark: #1a1a1a;
+    
+    /* Text */
+    --text-primary: #1a1a1a;
+    --text-body: #4a4a4a;
+    --text-muted: #7a7a7a;
+    --text-inverse: #ffffff;
+    
+    /* Accent & Actions */
+    --accent-primary: #2f6fdd;
+    --accent-hover: #1f57b8;
+    --accent-soft: #dce7fb;
+    
+    /* Borders & Dividers */
+    --border-light: #dddddd;
+    --border-card: #cccccc;
+    --border-dark: #333333;
+    
+    /* States */
+    --state-success: #2e7d32;
+    --state-warning: #ed6c02;
+    --state-error: #d32f2f;
+    
+    /* Spacing */
     --spacing-unit: 1rem;
     --max-width: 1200px;
 }
@@ -22,8 +45,8 @@
 }
 
 body {
-    background-color: var(--color-base-bg);
-    color: var(--color-text-main);
+    background-color: var(--bg-primary);
+    color: var(--text-body);
     font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
@@ -124,8 +147,8 @@ p { margin-bottom: 1rem; }
 .order-2 { order: 2; }
 
 /* Backgrounds */
-.bg-white { background-color: var(--color-neutral-white); }
-.bg-secondary { background-color: var(--color-secondary-accent); }
+.bg-white { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-alternate); }
 
 /* Borders */
 .rounded-xl { border-radius: 0.75rem; }
@@ -137,7 +160,7 @@ p { margin-bottom: 1rem; }
 
 /* Links */
 a {
-    color: var(--color-accent-highlight);
+    color: var(--accent-primary);
     text-decoration: none;
     transition: opacity 0.3s ease;
 }
@@ -148,8 +171,8 @@ a:hover {
 
 /* Buttons */
 .btn {
-    background-color: var(--color-accent-highlight);
-    color: var(--color-neutral-white);
+    background-color: var(--accent-primary);
+    color: var(--text-inverse);
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     border: none;
@@ -161,12 +184,12 @@ a:hover {
 
 .btn:hover {
     opacity: 0.9;
-    color: var(--color-neutral-white);
+    color: var(--text-inverse);
 }
 
 /* Cards */
 .card {
-    background-color: var(--color-neutral-white);
+    background-color: var(--bg-card);
     border-radius: 0.75rem;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -175,8 +198,8 @@ a:hover {
 
 /* Header */
 header {
-    background-color: var(--color-neutral-white);
-    border-bottom: 2px solid var(--color-secondary-accent);
+    background-color: var(--bg-primary);
+    border-bottom: 2px solid var(--border-light);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
@@ -185,8 +208,9 @@ header {
 
 /* Footer */
 footer {
-    background-color: var(--color-neutral-white);
-    border-top: 2px solid var(--color-secondary-accent);
+    background-color: var(--bg-dark);
+    border-top: 2px solid var(--border-dark);
+    color: var(--text-inverse);
     padding: 2rem 1rem;
     text-align: center;
     margin-top: auto;
@@ -235,7 +259,7 @@ img {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--color-accent-highlight), var(--color-secondary-accent));
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-hover));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -243,15 +267,14 @@ img {
 
 .portfolio-subtitle {
     font-size: 1.25rem;
-    color: var(--color-text-main);
-    opacity: 0.8;
+    color: var(--text-body);
 }
 
 /* Skills Section */
 .skills-section {
     margin-bottom: 4rem;
     padding: 2rem;
-    background-color: var(--color-neutral-white);
+    background-color: var(--bg-card);
     border-radius: var(--radius-lg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -271,7 +294,7 @@ img {
 .skill-category h3 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
-    color: var(--color-accent-highlight);
+    color: var(--accent-primary);
 }
 
 .skill-icons {
@@ -281,8 +304,8 @@ img {
 }
 
 .skill-tag {
-    background-color: var(--color-secondary-accent);
-    color: var(--color-text-main);
+    background-color: var(--accent-soft);
+    color: var(--text-primary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -308,7 +331,7 @@ img {
 
 /* Z-Pattern Project Cards */
 .project-card {
-    background-color: var(--color-neutral-white);
+    background-color: var(--bg-card);
     border-radius: var(--radius-lg);
     padding: 2rem;
     margin-bottom: 3rem;
@@ -329,8 +352,8 @@ img {
 }
 
 .project-card.featured {
-    border: 2px solid var(--color-accent-highlight);
-    background: linear-gradient(135deg, var(--color-neutral-white) 0%, #fef7f7 100%);
+    border: 2px solid var(--accent-primary);
+    background: var(--bg-primary);
 }
 
 /* Z-Pattern Layout */
@@ -346,12 +369,12 @@ img {
     font-size: 1.75rem;
     font-weight: 700;
     margin: 0;
-    color: var(--color-text-main);
+    color: var(--text-primary);
 }
 
 .project-cta {
-    background-color: var(--color-accent-highlight);
-    color: var(--color-neutral-white);
+    background-color: var(--accent-primary);
+    color: var(--text-inverse);
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius-sm);
     font-weight: 600;
@@ -361,7 +384,7 @@ img {
 }
 
 .project-cta:hover {
-    background-color: var(--color-text-main);
+    background-color: var(--accent-hover);
     transform: translateX(5px);
 }
 
@@ -395,12 +418,12 @@ img {
 .screenshot-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--color-secondary-accent), #E8F4F8);
+    background: var(--accent-soft);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--color-text-main);
+    color: var(--text-primary);
     font-weight: 600;
     gap: 1rem;
 }
@@ -425,13 +448,13 @@ img {
     gap: 0.75rem;
     margin-bottom: 0.75rem;
     font-size: 1rem;
-    color: var(--color-text-main);
+    color: var(--text-body);
 }
 
 .highlight-item i {
     width: 20px;
     height: 20px;
-    color: var(--color-accent-highlight);
+    color: var(--accent-primary);
     stroke-width: 2;
 }
 
@@ -442,13 +465,13 @@ img {
 }
 
 .tech-badge {
-    background-color: var(--color-base-bg);
-    color: var(--color-text-main);
+    background-color: var(--bg-alternate);
+    color: var(--text-primary);
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid var(--color-secondary-accent);
+    border: 1px solid var(--border-card);
 }
 
 /* Responsive Design */
@@ -503,13 +526,13 @@ img {
 
 /* Accessibility Improvements */
 .project-card:focus-within {
-    outline: 2px solid var(--color-accent-highlight);
+    outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
 }
 
 .skill-tag:focus,
 .tech-badge:focus {
-    outline: 2px solid var(--color-accent-highlight);
+    outline: 2px solid var(--accent-primary);
     outline-offset: 1px;
 }
 
@@ -586,16 +609,16 @@ img {
 /* High contrast mode support */
 @media (prefers-contrast: high) {
     .project-card {
-        border: 2px solid var(--color-text-main);
+        border: 2px solid var(--text-primary);
     }
     
     .skill-tag,
     .tech-badge {
-        border: 1px solid var(--color-text-main);
+        border: 1px solid var(--text-primary);
     }
     
     .project-cta {
-        border: 2px solid var(--color-neutral-white);
+        border: 2px solid var(--text-inverse);
     }
 }
 
