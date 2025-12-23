@@ -1,0 +1,457 @@
+/* ============================================
+   INTEGRATED THEME - FINTECH ALCHEMIST + MASSIVELY
+   Combining existing branding with template design
+   ============================================ */
+
+/* Custom Color Overrides for FinTech Alchemist Branding */
+:root {
+    --fintech-base: #F2F0EA;           /* Your warm beige */
+    --fintech-accent: #A8D5E3;        /* Your soft blue */
+    --fintech-highlight: #FF78AC;      /* Your pink highlight */
+    --fintech-text: #333333;          /* Your dark text */
+    --fintech-white: #FFFFFF;         /* Clean white */
+}
+
+/* Override template's dark theme with FinTech Alchemist colors */
+body {
+    background-color: var(--fintech-base) !important;
+    color: var(--fintech-text) !important;
+}
+
+/* Wrapper background integration */
+#wrapper > .bg {
+    background-color: var(--fintech-base) !important;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 120, 172, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(168, 213, 227, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, var(--fintech-base) 0%, var(--fintech-accent) 50%, var(--fintech-base) 100%) !important;
+    background-size: 800px 800px, 600px 600px, cover !important;
+    background-position: 0% 0%, 100% 100%, center !important;
+    animation: backgroundShift 20s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%, 100% { background-position: 0% 0%, 100% 100%, center; }
+    50% { background-position: 100% 100%, 0% 0%, center; }
+}
+
+/* Intro Section Customization */
+#intro {
+    background: linear-gradient(135deg, 
+        rgba(242, 240, 234, 0.95) 0%, 
+        rgba(168, 213, 227, 0.9) 50%, 
+        rgba(242, 240, 234, 0.95) 100%);
+    color: var(--fintech-text) !important;
+}
+
+#intro h1 {
+    color: var(--fintech-text) !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 800 !important;
+}
+
+#intro .highlight {
+    background: linear-gradient(135deg, var(--fintech-highlight), #FF9AC1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#intro p {
+    color: var(--fintech-text) !important;
+    opacity: 0.8;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Intro Stats Integration */
+.intro-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0 3rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 120, 172, 0.2);
+    min-width: 100px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--fintech-highlight) !important;
+    line-height: 1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--fintech-text) !important;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+}
+
+/* Header and Navigation */
+#header .logo {
+    color: var(--fintech-text) !important;
+    border-color: var(--fintech-highlight) !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+#header .logo:hover {
+    border-color: var(--fintech-accent) !important;
+    color: var(--fintech-highlight) !important;
+}
+
+/* Navigation styling */
+#nav {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 213, 227, 0.3);
+}
+
+#nav ul.links li a {
+    color: var(--fintech-text) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+#nav ul.links li a:hover {
+    background-color: rgba(255, 120, 172, 0.1) !important;
+    color: var(--fintech-highlight) !important;
+}
+
+#nav ul.links li.active {
+    background-color: var(--fintech-highlight) !important;
+}
+
+#nav ul.links li.active a {
+    color: var(--fintech-white) !important;
+}
+
+#nav ul.icons li a {
+    color: var(--fintech-text) !important;
+}
+
+#nav ul.icons li a:hover {
+    color: var(--fintech-highlight) !important;
+}
+
+/* Main Content Area */
+#main {
+    background-color: var(--fintech-white) !important;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+#main > * {
+    border-top-color: var(--fintech-accent) !important;
+}
+
+/* Featured Post Styling */
+.post.featured {
+    background: linear-gradient(135deg, 
+        var(--fintech-white) 0%, 
+        rgba(168, 213, 227, 0.1) 100%) !important;
+}
+
+.post.featured header.major h2 {
+    color: var(--fintech-text) !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.post.featured header.major h2 a {
+    color: var(--fintech-text) !important;
+    border-bottom-color: var(--fintech-highlight) !important;
+}
+
+.post.featured header.major h2 a:hover {
+    color: var(--fintech-highlight) !important;
+}
+
+.post.featured header.major p {
+    color: var(--fintech-text) !important;
+    opacity: 0.8;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.post.featured header.major .date {
+    color: var(--fintech-highlight) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Posts Grid Styling */
+.posts article {
+    background: var(--fintech-white) !important;
+    border-color: var(--fintech-accent) !important;
+    transition: all 0.3s ease;
+}
+
+.posts article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.posts article header h2 {
+    color: var(--fintech-text) !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.posts article header h2 a {
+    color: var(--fintech-text) !important;
+    border-bottom-color: var(--fintech-highlight) !important;
+}
+
+.posts article header h2 a:hover {
+    color: var(--fintech-highlight) !important;
+}
+
+.posts article header .date {
+    color: var(--fintech-highlight) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.posts article p {
+    color: var(--fintech-text) !important;
+    opacity: 0.8;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Button Styling */
+.button {
+    background: linear-gradient(135deg, var(--fintech-highlight), #FF9AC1) !important;
+    color: var(--fintech-white) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(255, 120, 172, 0.3) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #FF9AC1, var(--fintech-highlight)) !important;
+    color: var(--fintech-white) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 120, 172, 0.4) !important;
+}
+
+.button.large {
+    padding: 1rem 2.5rem !important;
+    font-size: 1rem !important;
+}
+
+/* Coffee Placeholder Styling */
+.coffee-placeholder {
+    background: linear-gradient(135deg, var(--fintech-accent), #C4E5F1);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--fintech-text);
+    font-weight: 600;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.coffee-placeholder:hover {
+    background: linear-gradient(135deg, #C4E5F1, var(--fintech-accent));
+    transform: scale(1.02);
+}
+
+.coffee-placeholder i {
+    font-size: 3rem;
+    color: var(--fintech-highlight);
+}
+
+/* Footer Styling */
+#footer {
+    background: linear-gradient(135deg, 
+        var(--fintech-white) 0%, 
+        rgba(168, 213, 227, 0.2) 100%) !important;
+    color: var(--fintech-text) !important;
+}
+
+#footer h3 {
+    color: var(--fintech-text) !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+#footer p, #footer a {
+    color: var(--fintech-text) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+#footer a:hover {
+    color: var(--fintech-highlight) !important;
+}
+
+#footer input, #footer textarea {
+    background-color: var(--fintech-white) !important;
+    border-color: var(--fintech-accent) !important;
+    color: var(--fintech-text) !important;
+}
+
+#footer input:focus, #footer textarea:focus {
+    border-color: var(--fintech-highlight) !important;
+}
+
+#footer label {
+    color: var(--fintech-text) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+#footer .button {
+    background: var(--fintech-highlight) !important;
+    color: var(--fintech-white) !important;
+}
+
+#footer .button:hover {
+    background: var(--fintech-accent) !important;
+}
+
+/* Copyright */
+#copyright {
+    color: var(--fintech-text) !important;
+    opacity: 0.6;
+    font-family: 'Inter', sans-serif !important;
+}
+
+#copyright a {
+    color: var(--fintech-highlight) !important;
+}
+
+/* Image Enhancements */
+.image img {
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.image:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 980px) {
+    .intro-stats {
+        gap: 1.5rem;
+    }
+    
+    .stat-item {
+        min-width: 80px;
+        padding: 0.75rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .intro-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        width: 200px;
+    }
+    
+    #intro h1 {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Enhanced Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.posts article {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.posts article:nth-child(1) { animation-delay: 0.1s; }
+.posts article:nth-child(2) { animation-delay: 0.2s; }
+.posts article:nth-child(3) { animation-delay: 0.3s; }
+.posts article:nth-child(4) { animation-delay: 0.4s; }
+.posts article:nth-child(5) { animation-delay: 0.5s; }
+.posts article:nth-child(6) { animation-delay: 0.6s; }
+
+/* Accessibility Improvements */
+.button:focus,
+.stat-item:focus {
+    outline: 2px solid var(--fintech-highlight);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    #wrapper > .bg,
+    .intro-stats,
+    #nav,
+    .coffee-placeholder {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .stat-item,
+    .posts article {
+        border: 2px solid var(--fintech-text);
+    }
+    
+    .button {
+        border: 2px solid var(--fintech-white) !important;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .posts article:hover,
+    .stat-item:hover,
+    .coffee-placeholder:hover {
+        transform: none;
+    }
+}
