@@ -1,0 +1,55 @@
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A8D5E3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8F4F8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#bg3)"/>
+  
+  <!-- Terminal/Dashboard -->
+  <rect x="30" y="40" width="340" height="170" fill="#333333" rx="8"/>
+  <rect x="30" y="40" width="340" height="30" fill="#FF78AC" rx="8 8 0 0"/>
+  
+  <!-- Terminal dots -->
+  <circle cx="50" cy="55" r="4" fill="#FFFFFF"/>
+  <circle cx="65" cy="55" r="4" fill="#FFFFFF"/>
+  <circle cx="80" cy="55" r="4" fill="#FFFFFF"/>
+  
+  <!-- Candlestick chart -->
+  <g stroke="#A8D5E3" stroke-width="2" fill="none">
+    <line x1="60" y1="90" x2="60" y2="130"/>
+    <rect x="55" y="100" width="10" height="20" fill="#A8D5E3"/>
+    
+    <line x1="90" y1="85" x2="90" y2="125"/>
+    <rect x="85" y="95" width="10" height="15" fill="#FF78AC"/>
+    
+    <line x1="120" y1="95" x2="120" y2="135"/>
+    <rect x="115" y="105" width="10" height="20" fill="#A8D5E3"/>
+    
+    <line x1="150" y1="80" x2="150" y2="120"/>
+    <rect x="145" y="90" width="10" height="15" fill="#FF78AC"/>
+    
+    <line x1="180" y1="100" x2="180" y2="140"/>
+    <rect x="175" y="110" width="10" height="20" fill="#A8D5E3"/>
+  </g>
+  
+  <!-- AI Brain icon -->
+  <circle cx="320" cy="130" r="25" fill="#FF78AC" opacity="0.8"/>
+  <circle cx="315" cy="125" r="3" fill="#FFFFFF"/>
+  <circle cx="325" cy="125" r="3" fill="#FFFFFF"/>
+  <path d="M310 135 Q320 145 330 135" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  
+  <!-- Code lines -->
+  <rect x="220" y="90" width="60" height="4" fill="#A8D5E3" rx="2"/>
+  <rect x="220" y="100" width="45" height="4" fill="#FFFFFF" rx="2"/>
+  <rect x="220" y="110" width="70" height="4" fill="#A8D5E3" rx="2"/>
+  <rect x="220" y="120" width="35" height="4" fill="#FFFFFF" rx="2"/>
+  
+  <!-- Status indicators -->
+  <circle cx="50" cy="180" r="5" fill="#00FF00"/>
+  <circle cx="80" cy="180" r="5" fill="#FF78AC"/>
+  <circle cx="110" cy="180" r="5" fill="#00FF00"/>
+</svg>
