@@ -1,0 +1,33 @@
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A8D5E3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8F4F8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#bg2)"/>
+  
+  <!-- Mobile app mockup -->
+  <rect x="150" y="30" width="100" height="180" fill="#FFFFFF" rx="15"/>
+  <rect x="160" y="50" width="80" height="20" fill="#FF78AC" rx="3"/>
+  
+  <!-- Pie chart -->
+  <circle cx="200" cy="120" r="30" fill="none" stroke="#A8D5E3" stroke-width="8"/>
+  <circle cx="200" cy="120" r="30" fill="none" stroke="#FF78AC" stroke-width="8" 
+          stroke-dasharray="47 94" transform="rotate(-90 200 120)"/>
+  
+  <!-- Budget items -->
+  <rect x="165" y="160" width="70" height="8" fill="#A8D5E3" rx="4"/>
+  <rect x="165" y="175" width="50" height="8" fill="#FF78AC" rx="4"/>
+  <rect x="165" y="190" width="60" height="8" fill="#333333" rx="4"/>
+  
+  <!-- Side elements -->
+  <rect x="50" y="80" width="60" height="40" fill="#FFFFFF" rx="5" opacity="0.8"/>
+  <rect x="290" y="120" width="60" height="40" fill="#FFFFFF" rx="5" opacity="0.8"/>
+  
+  <!-- Dollar signs -->
+  <text x="75" y="105" font-family="Arial" font-size="20" fill="#FF78AC">$</text>
+  <text x="315" y="145" font-family="Arial" font-size="20" fill="#FF78AC">$</text>
+</svg>
