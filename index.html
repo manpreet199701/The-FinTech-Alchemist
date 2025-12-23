@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The FinTech Alchemist</title>
+    <title>The FinTech Alchemist - Transforming Finance with AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="global-theme.css">
     <link rel="stylesheet" href="main.css">
     <script src="nav.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="min-h-screen flex flex-col">
+<body>
     <!-- Floating Signup Button -->
     <div class="sticky-bar">
         <p class="sticky-bar-text">Join</p>
@@ -19,113 +20,242 @@
 
     <!-- Navigation loaded by nav.js -->
 
-    <main class="flex-grow container mx-auto px-4 py-12">
-        <!-- Hero Section -->
-        <section class="text-center mb-20 bg-white rounded-xl p-8 shadow-lg">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6" style="color: var(--color-accent-highlight);">
-                The FinTech Alchemist
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                Transforming finance with technology. Follow my 3-month journey into the world of AI.
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="#projects" class="btn">
-                    View Projects
-                </a>
-                <a href="blog.html" class="btn" style="background-color: var(--color-secondary-accent); color: var(--color-text-main);">
-                    Read Blog
-                </a>
-            </div>
-        </section>
-
-        <!-- Latest Blog Post -->
-        <section class="mb-20">
-            <h2 class="text-3xl font-bold mb-6">Latest Blog Post</h2>
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-3">
-                    <a href="blog/blog1.html">The FinTech Alchemist - My 3-Month Journey</a>
-                </h3>
-                <p class="mb-4">
-                    Documenting my intensive 3-month plan to become a FinTech Alchemist...
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    The <span class="highlight">FinTech</span> Alchemist
+                </h1>
+                <p class="hero-subtitle">
+                    Transforming finance with AI • Building the future of financial technology
                 </p>
-                <a href="blog/blog1.html" class="inline-flex items-center">
-                    Read more <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
-                </a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Month Journey</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Possibilities</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="projects.html" class="btn-primary">
+                        <i data-feather="code"></i>
+                        View My Work
+                    </a>
+                    <a href="#about" class="btn-secondary">
+                        <i data-feather="user"></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <i data-feather="trending-up"></i>
+                    <span>AI Trading</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i data-feather="shield"></i>
+                    <span>Risk Analysis</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i data-feather="brain"></i>
+                    <span>ML Models</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About My Journey</h2>
+                    <p class="section-subtitle">From finance enthusiast to AI-powered FinTech developer</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <div class="journey-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i data-feather="play-circle"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Phase 1: Foundations</h3>
+                                    <p>Building core programming and financial analysis skills</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i data-feather="zap"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Phase 2: AI Integration</h3>
+                                    <p>Implementing machine learning in financial applications</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i data-feather="target"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h3>Phase 3: Innovation</h3>
+                                    <p>Creating cutting-edge FinTech solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="skill-cloud">
+                            <span class="skill-bubble python">Python</span>
+                            <span class="skill-bubble ai">AI/ML</span>
+                            <span class="skill-bubble finance">Finance</span>
+                            <span class="skill-bubble data">Data Science</span>
+                            <span class="skill-bubble api">APIs</span>
+                            <span class="skill-bubble cloud">Cloud</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Featured Projects -->
-        <section id="projects" class="mb-20">
-            <h2 class="text-3xl font-bold mb-6">Featured Projects</h2>
-            
-            <!-- Project 1 -->
-            <div class="grid md:grid-cols-2 gap-8 mb-12 items-center">
-                <div class="order-1 md:order-2">
-                    <img src="https://placehold.co/1000x500/00ADB5/ffffff?text=Project+1+-+Trading+Bot" 
-                         alt="Trading Bot Project" 
-                         class="rounded-xl shadow-xl w-full h-auto">
+        <section class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Real-world applications of AI in finance</p>
                 </div>
-                <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-semibold mb-3">Algorithmic Trading Bot</h3>
-                    <p class="mb-4">
-                        A Python-based bot that uses historical data to make automated trading decisions.
-                    </p>
-                    <a href="projects.html" class="inline-flex items-center">
-                        View Project <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
-                    </a>
+                <div class="projects-grid">
+                    <div class="project-card featured">
+                        <div class="project-image">
+                            <img src="images/ai-trading-preview.svg" alt="AI Trading Algorithm" />
+                            <div class="project-overlay">
+                                <a href="projects.html" class="project-link">
+                                    <i data-feather="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Trading Algorithm</h3>
+                            <p>Machine learning model for automated trading decisions with real-time market analysis</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/financial-analysis-preview.svg" alt="Financial Analysis" />
+                            <div class="project-overlay">
+                                <a href="projects.html" class="project-link">
+                                    <i data-feather="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Financial Statement Analysis</h3>
+                            <p>Automated analysis tool for evaluating company financial health and investment potential</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">Plotly</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/budgeting-tool-preview.svg" alt="Budgeting Tool" />
+                            <div class="project-overlay">
+                                <a href="projects.html" class="project-link">
+                                    <i data-feather="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Smart Budgeting Tool</h3>
+                            <p>Personal finance tracker with AI-powered insights and goal tracking capabilities</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Project 2 -->
-            <div class="grid md:grid-cols-2 gap-8 mb-12 items-center">
-                <div>
-                    <img src="https://placehold.co/1000x500/FF577F/ffffff?text=Project+2+-+Risk+Analysis" 
-                         alt="Risk Analysis Project" 
-                         class="rounded-xl shadow-xl w-full h-auto">
-                </div>
-                <div>
-                    <h3 class="text-2xl font-semibold mb-3">AI-Powered Risk Analysis</h3>
-                    <p class="mb-4">
-                        A machine learning model that predicts loan default risk for financial institutions.
-                    </p>
-                    <a href="projects.html" class="inline-flex items-center">
-                        View Project <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Project 3 -->
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-1 md:order-2">
-                    <img src="https://placehold.co/1000x500/00ADB5/1A202C?text=Project+3+-+Sentiment+Analysis" 
-                         alt="Sentiment Analysis Project" 
-                         class="rounded-xl shadow-xl w-full h-auto">
-                </div>
-                <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-semibold mb-3">Financial News Sentiment Tracker</h3>
-                    <p class="mb-4">
-                        An application that analyzes news headlines to gauge market sentiment in real-time.
-                    </p>
-                    <a href="projects.html" class="inline-flex items-center">
-                        View Project <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                <div class="projects-cta">
+                    <a href="projects.html" class="btn-outline">
+                        View All Projects <i data-feather="arrow-right"></i>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Support Section -->
-        <section class="bg-secondary rounded-xl p-8 text-center">
-            <h2 class="text-2xl font-bold mb-4">Fuel My FinTech Projects!</h2>
-            <p class="mb-6 max-w-2xl mx-auto">
-                If you enjoy my journey and the projects I share, consider supporting my work. Every cup of coffee helps <span class="font-semibold">power the research</span> and keeps me coding late into the night!
-            </p>
-            <a href="https://www.buymeacoffee.com/missbuttercickenn" target="_blank" class="btn" style="background-color: #FFD700; color: #333;">
-                <i data-feather="coffee" class="mr-2"></i> Buy Me a Coffee!
-            </a>
+        <!-- Latest Blog -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-content">
+                    <div class="blog-text">
+                        <h2 class="section-title">Latest Insights</h2>
+                        <h3 class="blog-title">The FinTech Alchemist Journey</h3>
+                        <p class="blog-excerpt">
+                            Follow my intensive 3-month transformation into a FinTech developer. From learning Python to building AI-powered trading algorithms, discover the challenges, breakthroughs, and lessons learned.
+                        </p>
+                        <a href="blog/blog1.html" class="btn-primary">
+                            <i data-feather="book-open"></i>
+                            Read Full Story
+                        </a>
+                    </div>
+                    <div class="blog-visual">
+                        <div class="blog-card">
+                            <div class="blog-meta">
+                                <span class="blog-date">Latest Post</span>
+                                <span class="blog-category">Journey</span>
+                            </div>
+                            <h4>My 3-Month FinTech Transformation</h4>
+                            <p>Documenting the complete journey from beginner to building production-ready financial applications...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support CTA -->
+        <section class="support-section">
+            <div class="container">
+                <div class="support-card">
+                    <div class="support-content">
+                        <h2>Fuel the Innovation</h2>
+                        <p>Support my FinTech journey and help bring more innovative projects to life</p>
+                        <a href="https://www.buymeacoffee.com/missbuttercickenn" target="_blank" class="btn-coffee">
+                            <i data-feather="coffee"></i>
+                            Buy Me a Coffee
+                        </a>
+                    </div>
+                    <div class="support-visual">
+                        <div class="coffee-animation">
+                            ☕
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-
-
 
     <!-- Footer -->
     <footer>
@@ -152,8 +282,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        feather.replace();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>feather.replace();</script>
+    <script src="homepage-interactions.js"></script>
 </body>
 </html>
