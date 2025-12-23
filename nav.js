@@ -9,7 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const navHTML = `
         <header style="background-color: var(--color-neutral-white); border-bottom: 2px solid var(--color-secondary-accent); position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <nav class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
-                <a href="${base}index.html" style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent-highlight);">The FinTech Alchemist</a>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <a href="#signup" class="nav-signup-btn" style="display: flex; align-items: center; padding: 0.5rem; border-radius: 50%; background: linear-gradient(135deg, var(--color-accent-highlight), #FF9AC1); transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(255, 120, 172, 0.3);" aria-label="Sign Up">
+                        <img src="${base}images/signup-icon.svg" alt="Sign Up" style="width: 24px; height: 24px;" />
+                    </a>
+                    <a href="${base}index.html" style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent-highlight);">The FinTech Alchemist</a>
+                </div>
                 
                 <!-- Desktop Menu -->
                 <div id="desktop-nav" style="display: none; gap: 1.5rem;">
@@ -34,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Mobile Dropdown -->
             <div id="nav-menu" style="display: none; background-color: var(--color-neutral-white); border-top: 1px solid var(--color-secondary-accent);">
                 <div class="container" style="padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="#signup" style="padding: 0.5rem 0; color: var(--color-accent-highlight); font-weight: 600; border-bottom: 1px solid var(--color-secondary-accent); margin-bottom: 0.5rem;">📝 Sign Up</a>
                     <a href="${base}blog.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Blog</a>
                     <a href="${base}about.html" style="padding: 0.5rem 0; color: var(--color-text-main);">About</a>
                     <a href="${base}projects.html" style="padding: 0.5rem 0; color: var(--color-text-main);">Projects</a>
